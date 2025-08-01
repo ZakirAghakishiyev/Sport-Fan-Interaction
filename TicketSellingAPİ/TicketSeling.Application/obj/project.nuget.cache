@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "caqTYeBpw5Y=",
+  "dgSpecHash": "aBkyfURYTns=",
   "success": true,
-  "projectFilePath": "E:\\CAProject\\TicketSeling.Application\\TicketSeling.Application.csproj",
+  "projectFilePath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSeling.Application\\TicketSeling.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakir\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\zakir\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

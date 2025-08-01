@@ -69,8 +69,7 @@
               "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\ISeatRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:24:05.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T08:24:05.868Z"
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\IGiftRewardRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:23:19.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T08:23:19.24Z"
             },
             {
               "$type": "Document",
@@ -108,8 +106,7 @@
               "RelativeToolTip": "..\\TicketSelling.Infrastructure\\Repositories\\EfCoreRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:12:38.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T08:12:38.144Z"
             },
             {
               "$type": "Document",
@@ -121,8 +118,7 @@
               "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\ITicketRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:08:47.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T08:08:47.428Z"
             },
             {
               "$type": "Document",
@@ -170,8 +166,7 @@
               "RelativeToolTip": "..\\TicketSelling.Infrastructure\\AppDbContext.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwBAAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T07:50:20.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T07:50:20.102Z"
             }
           ]
         }

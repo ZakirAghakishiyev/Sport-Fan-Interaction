@@ -1,11 +1,8 @@
-﻿namespace TicketSelling.Core.Entities
+﻿namespace TicketSelling.Core.Entities;
+
+public enum RewardType
 {
-    public enum RewardType
-    {
-        MerchandiseGift,
-        SeatUpgrade,
-        LoyaltyBonus
-    }
-
-
+    MerchandiseGift,
+    SeatUpgrade,
+    LoyaltyBonus
 }

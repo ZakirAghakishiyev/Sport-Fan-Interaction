@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TicketSeling.Application",
+    "\\TicketSelling.Core",
+    "\\TicketSelling.Infrastructure",
+    "\\TicketSelling.Web"
+  ],
+  "SelectedNode": "\\TicketSeling.Application\\WeatherForecast.cs",
+  "PreviewInSolutionExplorer": false
+}

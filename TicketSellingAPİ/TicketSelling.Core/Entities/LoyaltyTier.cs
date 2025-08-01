@@ -1,12 +1,9 @@
-﻿namespace TicketSelling.Core.Entities
+﻿namespace TicketSelling.Core.Entities;
+
+public enum LoyaltyTier
 {
-    public enum LoyaltyTier
-    {
-        Bronze,
-        Silver,
-        Gold,
-        Platinum
-    }
-
-
+    Bronze,
+    Silver,
+    Gold,
+    Platinum
 }

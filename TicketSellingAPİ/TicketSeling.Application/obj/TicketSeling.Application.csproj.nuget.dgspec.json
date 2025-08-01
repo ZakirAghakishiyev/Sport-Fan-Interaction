@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CAProject\\TicketSeling.Application\\TicketSeling.Application.csproj": {}
+    "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSeling.Application\\TicketSeling.Application.csproj": {}
   },
   "projects": {
-    "E:\\CAProject\\TicketSeling.Application\\TicketSeling.Application.csproj": {
+    "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSeling.Application\\TicketSeling.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CAProject\\TicketSeling.Application\\TicketSeling.Application.csproj",
+        "projectUniqueName": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSeling.Application\\TicketSeling.Application.csproj",
         "projectName": "TicketSeling.Application",
-        "projectPath": "E:\\CAProject\\TicketSeling.Application\\TicketSeling.Application.csproj",
+        "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSeling.Application\\TicketSeling.Application.csproj",
         "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
-        "outputPath": "E:\\CAProject\\TicketSeling.Application\\obj\\",
+        "outputPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSeling.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj": {
-                "projectPath": "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj"
+              "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj": {
+                "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj"
               },
-              "E:\\CAProject\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj": {
-                "projectPath": "E:\\CAProject\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj"
+              "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj": {
+                "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj": {
+    "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj",
+        "projectUniqueName": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj",
         "projectName": "TicketSelling.Core",
-        "projectPath": "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj",
+        "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj",
         "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
-        "outputPath": "E:\\CAProject\\TicketSelling.Core\\obj\\",
+        "outputPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -156,14 +156,14 @@
         }
       }
     },
-    "E:\\CAProject\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj": {
+    "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CAProject\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj",
+        "projectUniqueName": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj",
         "projectName": "TicketSelling.Infrastructure",
-        "projectPath": "E:\\CAProject\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj",
+        "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
-        "outputPath": "E:\\CAProject\\TicketSelling.Infrastructure\\obj\\",
+        "outputPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -184,8 +184,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj": {
-                "projectPath": "E:\\CAProject\\TicketSelling.Core\\TicketSelling.Core.csproj"
+              "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj": {
+                "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Core\\TicketSelling.Core.csproj"
               }
             }
           }
