@@ -1,33 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\CAProject\\TicketSellingAPI\\",
+  "WorkspaceRootPath": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\caproject\\ticketselling.core\\interfaces\\imatchsectorpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59F38EB2-7979-4ACC-95BA-851FE2336572}|..\\TicketSelling.Web\\TicketSelling.Web.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100A3FBD-4DC6-4FEE-947E-8523D79C77F6}|..\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj|e:\\caproject\\ticketselling.infrastructure\\repositories\\efcorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\caproject\\ticketselling.core\\interfaces\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\caproject\\ticketselling.core\\interfaces\\iseatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\caproject\\ticketselling.core\\interfaces\\igiftrewardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{100A3FBD-4DC6-4FEE-947E-8523D79C77F6}|..\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj|e:\\caproject\\ticketselling.infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\caproject\\ticketselling.core\\entities\\seatclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\caproject\\ticketselling.core\\entities\\rewardtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F38EB2-7979-4ACC-95BA-851FE2336572}|..\\TicketSelling.Web\\TicketSelling.Web.csproj|e:\\caproject\\ticketselling.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{100A3FBD-4DC6-4FEE-947E-8523D79C77F6}|..\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +16,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,112 +40,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ISeatRepository.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\ISeatRepository.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Interfaces\\ISeatRepository.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\ISeatRepository.cs",
-              "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\ISeatRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:24:05.868Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IMatchSectorPriceRepository.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\IMatchSectorPriceRepository.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Interfaces\\IMatchSectorPriceRepository.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\IMatchSectorPriceRepository.cs",
-              "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\IMatchSectorPriceRepository.cs",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\TicketSelling.Web\\appsettings.json",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\appsettings.json",
+              "RelativeToolTip": "..\\TicketSelling.Web\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:23:20.795Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-05T05:35:35.752Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IGiftRewardRepository.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\IGiftRewardRepository.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Interfaces\\IGiftRewardRepository.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\IGiftRewardRepository.cs",
-              "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\IGiftRewardRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:23:19.24Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EfCoreRepository.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Infrastructure\\Repositories\\EfCoreRepository.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Infrastructure\\Repositories\\EfCoreRepository.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Infrastructure\\Repositories\\EfCoreRepository.cs",
-              "RelativeToolTip": "..\\TicketSelling.Infrastructure\\Repositories\\EfCoreRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:12:38.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ITicketRepository.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\ITicketRepository.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Interfaces\\ITicketRepository.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Core\\Interfaces\\ITicketRepository.cs",
-              "RelativeToolTip": "..\\TicketSelling.Core\\Interfaces\\ITicketRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:08:47.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SeatClass.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Core\\Entities\\SeatClass.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Entities\\SeatClass.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Core\\Entities\\SeatClass.cs",
-              "RelativeToolTip": "..\\TicketSelling.Core\\Entities\\SeatClass.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:07:54.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RewardType.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Core\\Entities\\RewardType.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Entities\\RewardType.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Core\\Entities\\RewardType.cs",
-              "RelativeToolTip": "..\\TicketSelling.Core\\Entities\\RewardType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:07:43.91Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Web\\Program.cs",
-              "RelativeDocumentMoniker": "..\\TicketSelling.Web\\Program.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Web\\Program.cs",
-              "RelativeToolTip": "..\\TicketSelling.Web\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T07:50:36.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "E:\\CAProject\\TicketSelling.Infrastructure\\AppDbContext.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Infrastructure\\AppDbContext.cs",
               "RelativeDocumentMoniker": "..\\TicketSelling.Infrastructure\\AppDbContext.cs",
-              "ToolTip": "E:\\CAProject\\TicketSelling.Infrastructure\\AppDbContext.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Infrastructure\\AppDbContext.cs",
               "RelativeToolTip": "..\\TicketSelling.Infrastructure\\AppDbContext.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBAAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T07:50:20.102Z"
+              "WhenOpened": "2025-08-05T05:35:21.937Z",
+              "EditorCaption": ""
             }
           ]
         }

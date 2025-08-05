@@ -9,6 +9,6 @@ public class User : IdentityUser<int>
 
     public List<Ticket> Tickets { get; set; } = [];
     public List<Order> MerchandiseOrders { get; set; } = [];
-    public List<UserSavedCards> UserSavedCards { get; set; } = [];
+    public List<UserSavedCard> UserSavedCards { get; set; } = [];
 
 }

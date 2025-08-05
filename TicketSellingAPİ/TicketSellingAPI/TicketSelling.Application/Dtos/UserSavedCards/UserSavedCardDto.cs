@@ -3,7 +3,7 @@ using TicketSelling.Application.Dtos.User;
 
 namespace TicketSelling.Application.Dtos.UserSavedCards;
 
-public class UserSavedCardsDto
+public class UserSavedCardDto
 {
     public int Id { get; set; }
     public UserDto? User { get; set; }

@@ -15,5 +15,5 @@ public class UserDto
 
     public List<TicketDto> Tickets { get; set; } = new();
     public List<OrderDto> MerchandiseOrders { get; set; } = new();
-    public List<UserSavedCardsDto> UserSavedCards { get; set; } = new();
+    public List<UserSavedCardDto> UserSavedCards { get; set; } = new();
 }

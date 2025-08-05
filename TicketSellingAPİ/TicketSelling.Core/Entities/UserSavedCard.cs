@@ -1,6 +1,6 @@
 ﻿namespace TicketSelling.Core.Entities;
 
-public class UserSavedCards:BaseEntity
+public class UserSavedCard:BaseEntity
 {
     public int UserId { get; set; }
     public int CardDetailsId { get; set; }
