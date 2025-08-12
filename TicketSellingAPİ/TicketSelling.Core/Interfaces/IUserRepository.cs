@@ -5,9 +5,9 @@ namespace TicketSelling.Core.Interfaces;
 
 public interface IUserRepository
 {
-    User GetById(int id);
-    User Get(Expression<Func<User, bool>> predicate);
-    List<User> GetAll();
+    Task<User> GetById(int id);
+    Task<User> Get(Expression<Func<User, bool>> predicate);
+    List<Task<User>> GetAll();
     void Add(User entity);
     void Update(User entity);
     void Remove(User entity);

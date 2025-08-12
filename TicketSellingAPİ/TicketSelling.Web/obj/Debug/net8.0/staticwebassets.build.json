@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Lem8xh3GUljgSgGhxQFqc+QAdAnwJr5EvFjDfEZ9FAc=",
+  "Source": "TicketSelling.Web",
+  "BasePath": "_content/TicketSelling.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

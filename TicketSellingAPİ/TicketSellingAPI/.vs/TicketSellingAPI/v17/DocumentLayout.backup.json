@@ -3,6 +3,117 @@
   "WorkspaceRootPath": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{59F38EB2-7979-4ACC-95BA-851FE2336572}|..\\TicketSelling.Web\\TicketSelling.Web.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.web\\controllers\\merchandisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\interfaces\\icrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\interfaces\\icrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\merchandisemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\merchandisemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\crudmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\crudmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F38EB2-7979-4ACC-95BA-851FE2336572}|..\\TicketSelling.Web\\TicketSelling.Web.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\usersavedcardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\usersavedcardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\ticketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\ticketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\stadiummanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\stadiummanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\sectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\sectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\seatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\seatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\paymentdetailmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\paymentdetailmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\orderitemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\orderitemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\matchsectorpricemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\matchsectorpricemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\matchmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\matchmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\giftrewardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\giftrewardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\crudmanagerwithoutupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\crudmanagerwithoutupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\services\\carddetailsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\services\\carddetailsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\interfaces\\igiftrewardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\interfaces\\igiftrewardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\interfaces\\imatchsectorpriceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\interfaces\\imatchsectorpriceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\interfaces\\icarddetailsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\interfaces\\icarddetailsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\dtos\\usersavedcards\\usersavedcarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\dtos\\usersavedcards\\usersavedcarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\dtos\\usersavedcards\\usersavedcardcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\dtos\\usersavedcards\\usersavedcardcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.core\\entities\\usersavedcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\dtos\\order\\ordercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\dtos\\order\\ordercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49234D90-F87A-4453-A7DE-AA203F4FFBAA}|..\\TicketSelling.Core\\TicketSelling.Core.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.core\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketsellingapi\\ticketselling.application\\dtos\\matchsectorprice\\matchsectorpricedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D23F3EEA-EAB9-4E99-B45C-C158EEB9B84E}|TicketSelling.Application\\TicketSelling.Application.csproj|solutionrelative:ticketselling.application\\dtos\\matchsectorprice\\matchsectorpricedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{59F38EB2-7979-4ACC-95BA-851FE2336572}|..\\TicketSelling.Web\\TicketSelling.Web.csproj|e:\\codeacademyproject\\ticketsellingap\u0130\\ticketselling.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
@@ -16,8 +127,229 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\Program.cs",
+              "RelativeDocumentMoniker": "..\\TicketSelling.Web\\Program.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\Program.cs",
+              "RelativeToolTip": "..\\TicketSelling.Web\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwBcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:57:49.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MerchandiseController.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\Controllers\\MerchandiseController.cs",
+              "RelativeDocumentMoniker": "..\\TicketSelling.Web\\Controllers\\MerchandiseController.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\Controllers\\MerchandiseController.cs",
+              "RelativeToolTip": "..\\TicketSelling.Web\\Controllers\\MerchandiseController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwBIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:53:38.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserSavedCardManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\UserSavedCardManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\UserSavedCardManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\UserSavedCardManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\UserSavedCardManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:41:04.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TicketManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\TicketManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\TicketManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\TicketManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\TicketManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:40:55.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StadiumManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\StadiumManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\StadiumManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\StadiumManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\StadiumManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:40:48.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SectorManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\SectorManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\SectorManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\SectorManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\SectorManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:40:39.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SeatManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\SeatManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\SeatManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\SeatManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\SeatManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:40:26.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PaymentDetailManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\PaymentDetailManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\PaymentDetailManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\PaymentDetailManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\PaymentDetailManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:39:37.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\OrderManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\OrderManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\OrderManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\OrderManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:39:27.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderItemManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\OrderItemManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\OrderItemManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\OrderItemManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\OrderItemManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:39:17.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MerchandiseManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\MerchandiseManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\MerchandiseManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\MerchandiseManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\MerchandiseManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:39:06.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CrudManagerWithoutUpdate.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\CrudManagerWithoutUpdate.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\CrudManagerWithoutUpdate.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\CrudManagerWithoutUpdate.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\CrudManagerWithoutUpdate.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:36:50.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IMatchSectorPriceService.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\IMatchSectorPriceService.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Interfaces\\IMatchSectorPriceService.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\IMatchSectorPriceService.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Interfaces\\IMatchSectorPriceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:37:44.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MatchSectorPriceManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\MatchSectorPriceManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\MatchSectorPriceManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\MatchSectorPriceManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\MatchSectorPriceManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:37:06.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MatchManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\MatchManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\MatchManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\MatchManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\MatchManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:37:01.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GiftRewardManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\GiftRewardManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\GiftRewardManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\GiftRewardManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\GiftRewardManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:36:54.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Interfaces\\IOrderService.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:33:56.967Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -40,7 +372,156 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 17,
+              "Title": "CardDetailsManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\CardDetailsManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\CardDetailsManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\CardDetailsManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\CardDetailsManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:31:34.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IGiftRewardService.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\IGiftRewardService.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Interfaces\\IGiftRewardService.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\IGiftRewardService.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Interfaces\\IGiftRewardService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:27:09.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ICardDetailsService.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\ICardDetailsService.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Interfaces\\ICardDetailsService.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\ICardDetailsService.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Interfaces\\ICardDetailsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:21:09.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CrudManager.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\CrudManager.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Services\\CrudManager.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Services\\CrudManager.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Services\\CrudManager.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:20:26.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserSavedCardDto.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardDto.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardDto.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardDto.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:09:35.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserSavedCardCreateDto.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardCreateDto.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardCreateDto.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardCreateDto.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Dtos\\UserSavedCards\\UserSavedCardCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:09:27.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserSavedCard.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Core\\Entities\\UserSavedCard.cs",
+              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Entities\\UserSavedCard.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Core\\Entities\\UserSavedCard.cs",
+              "RelativeToolTip": "..\\TicketSelling.Core\\Entities\\UserSavedCard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:08:52.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Order.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Core\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Entities\\Order.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Core\\Entities\\Order.cs",
+              "RelativeToolTip": "..\\TicketSelling.Core\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T05:58:53.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "OrderCreateDto.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\Order\\OrderCreateDto.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Dtos\\Order\\OrderCreateDto.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\Order\\OrderCreateDto.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Dtos\\Order\\OrderCreateDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwAsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T05:57:55.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Core\\Entities\\OrderItem.cs",
+              "RelativeDocumentMoniker": "..\\TicketSelling.Core\\Entities\\OrderItem.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Core\\Entities\\OrderItem.cs",
+              "RelativeToolTip": "..\\TicketSelling.Core\\Entities\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T05:56:39.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MatchSectorPriceDto.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\MatchSectorPrice\\MatchSectorPriceDto.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Dtos\\MatchSectorPrice\\MatchSectorPriceDto.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Dtos\\MatchSectorPrice\\MatchSectorPriceDto.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Dtos\\MatchSectorPrice\\MatchSectorPriceDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T05:53:40.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICrudService.cs",
+              "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\ICrudService.cs",
+              "RelativeDocumentMoniker": "TicketSelling.Application\\Interfaces\\ICrudService.cs",
+              "ToolTip": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSellingAPI\\TicketSelling.Application\\Interfaces\\ICrudService.cs",
+              "RelativeToolTip": "TicketSelling.Application\\Interfaces\\ICrudService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T05:47:34.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Web\\appsettings.json",
               "RelativeDocumentMoniker": "..\\TicketSelling.Web\\appsettings.json",
@@ -48,12 +529,11 @@
               "RelativeToolTip": "..\\TicketSelling.Web\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-05T05:35:35.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-05T05:35:35.752Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 30,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "E:\\CodeAcademyProject\\TicketSellingAP\u0130\\TicketSelling.Infrastructure\\AppDbContext.cs",
               "RelativeDocumentMoniker": "..\\TicketSelling.Infrastructure\\AppDbContext.cs",
@@ -61,8 +541,7 @@
               "RelativeToolTip": "..\\TicketSelling.Infrastructure\\AppDbContext.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T05:35:21.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-05T05:35:21.937Z"
             }
           ]
         }

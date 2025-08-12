@@ -15,13 +15,13 @@ public class EfCoreRepository<T> : IRepository<T> where T : BaseEntity
         _context = context;
     }
 
-    public virtual void Add(T entity)
+    public async virtual Task Add(T entity)
     {
-        _context.Set<T>().Add(entity);
-        _context.SaveChanges();
+        await _context.Set<T>().AddAsync(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public virtual T Get(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
+    public async virtual Task<T> GetAsync(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
     {
         IQueryable<T> queryable = _context.Set<T>();
@@ -31,11 +31,13 @@ public class EfCoreRepository<T> : IRepository<T> where T : BaseEntity
 
         if (!asNoTracking)
             queryable = queryable.AsNoTracking();
-
-        return queryable.FirstOrDefault(predicate);
+        var res = await queryable.FirstOrDefaultAsync(predicate);
+        if (res == null)
+            throw new NullReferenceException(nameof(res));
+        return res;
     }
 
-    public virtual List<T> GetAll(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
+    public async virtual Task<List<T>> GetAll(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null)
     {
@@ -53,25 +55,26 @@ public class EfCoreRepository<T> : IRepository<T> where T : BaseEntity
         if (!asNoTracking)
             queryable = queryable.AsNoTracking();
 
-        return queryable.ToList();
+        return await queryable.ToListAsync();
     }
 
-    public virtual T GetById(int id)
+    public async virtual Task<T> GetByIdAsync(int id)
     {
-        T entity = _context.Set<T>().Find(id);
-
+        var entity = await _context.Set<T>().FindAsync(id);
+        if(entity == null)
+            throw new NullReferenceException($"{nameof(entity)} is null");
         return entity;
     }
 
-    public virtual void Remove(T entity)
+    public async virtual void RemoveAsync(T entity)
     {
         _context.Set<T>().Remove(entity);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
     }
 
-    public virtual void Update(T entity)
+    public async virtual void UpdateAsync(T entity)
     {
         _context.Set<T>().Update(entity);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
     }
 }

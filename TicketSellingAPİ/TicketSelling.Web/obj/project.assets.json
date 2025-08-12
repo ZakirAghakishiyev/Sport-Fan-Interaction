@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/14.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1155,6 +1171,21 @@
           }
         }
       },
+      "TicketSelling.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "14.0.0",
+          "TicketSelling.Core": "1.0.0",
+          "TicketSelling.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TicketSelling.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TicketSelling.Application.dll": {}
+        }
+      },
       "TicketSelling.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1186,6 +1217,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/14.0.0": {
+      "sha512": "OC+1neAPM4oCCqQj3g2GJ2shziNNhOkxmNB9cVS8jtx4JbgmRzLcUOxB9Tsz6cVPHugdkHgCaCrTjjSI0Z5sCQ==",
+      "type": "package",
+      "path": "automapper/14.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.14.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net8.0/AutoMapper.dll",
+        "lib/net8.0/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -3343,6 +3389,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TicketSelling.Application/1.0.0": {
+      "type": "project",
+      "path": "../TicketSellingAPI/TicketSelling.Application/TicketSelling.Application.csproj",
+      "msbuildProject": "../TicketSellingAPI/TicketSelling.Application/TicketSelling.Application.csproj"
+    },
     "TicketSelling.Core/1.0.0": {
       "type": "project",
       "path": "../TicketSelling.Core/TicketSelling.Core.csproj",
@@ -3357,6 +3408,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Swashbuckle.AspNetCore >= 6.6.2",
+      "TicketSelling.Application >= 1.0.0",
       "TicketSelling.Core >= 1.0.0",
       "TicketSelling.Infrastructure >= 1.0.0"
     ]
@@ -3398,6 +3450,9 @@
             },
             "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj": {
               "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSelling.Infrastructure\\TicketSelling.Infrastructure.csproj"
+            },
+            "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\TicketSelling.Application\\TicketSelling.Application.csproj": {
+              "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\TicketSelling.Application\\TicketSelling.Application.csproj"
             }
           }
         }

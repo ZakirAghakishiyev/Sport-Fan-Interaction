@@ -12,13 +12,13 @@ namespace TicketSelling.Core.Interfaces;
 
 public interface IRepository<T> where T : BaseEntity
 {
-    T GetById(int id);
-    T Get(Expression<Func<T, bool>> predicate, bool asNoTracking = false,
+    Task<T> GetByIdAsync(int id);
+    Task<T> GetAsync(Expression<Func<T, bool>> predicate, bool asNoTracking = false,
         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null);
-    List<T> GetAll(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
+    Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null);
-    void Add(T entity);
-    void Update(T entity);
-    void Remove(T entity);
+    void AddAsync(T entity);
+    void UpdateAsync(T entity);
+    void RemoveAsync(T entity);
 }

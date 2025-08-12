@@ -1,0 +1,13 @@
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\bin\Debug\net8.0\TicketSelling.Core.deps.json
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\bin\Debug\net8.0\TicketSelling.Core.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\bin\Debug\net8.0\TicketSelling.Core.pdb
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.csproj.AssemblyReference.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.AssemblyInfoInputs.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.AssemblyInfo.cs
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.csproj.CoreCompileInputs.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.sourcelink.json
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\refint\TicketSelling.Core.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\TicketSelling.Core.pdb
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Core\obj\Debug\net8.0\ref\TicketSelling.Core.dll
