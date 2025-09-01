@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
-using TicketSelling.Core.Interfaces;
 using TicketSelling.Core.Entities;
-using Microsoft.EntityFrameworkCore;
+using TicketSelling.Core.Interfaces;
 
 namespace TicketSelling.Infrastructure.Repositories;
 
@@ -15,31 +15,39 @@ public class EfCoreRepository<T> : IRepository<T> where T : BaseEntity
         _context = context;
     }
 
-    public async virtual Task Add(T entity)
+    public async Task<T> GetByIdAsync(int id)
     {
-        await _context.Set<T>().AddAsync(entity);
-        await _context.SaveChangesAsync();
+        var entity = await _context.Set<T>().FindAsync(id);
+        if (entity == null)
+            throw new NullReferenceException("Entity not found");
+        return entity;
     }
 
-    public async virtual Task<T> GetAsync(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
-        Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null)
+    public async Task<T> GetAsync(
+        Expression<Func<T, bool>> predicate,
+        Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+        bool asNoTracking = false)
     {
         IQueryable<T> queryable = _context.Set<T>();
 
         if (include != null)
             queryable = include(queryable);
 
-        if (!asNoTracking)
+        if (asNoTracking)
             queryable = queryable.AsNoTracking();
-        var res = await queryable.FirstOrDefaultAsync(predicate);
-        if (res == null)
-            throw new NullReferenceException(nameof(res));
-        return res;
+
+        var entity = await queryable.FirstOrDefaultAsync(predicate);
+        if (entity == null)
+            throw new NullReferenceException("Entity not found");
+
+        return entity;
     }
 
-    public async virtual Task<List<T>> GetAll(Expression<Func<T, bool>>? predicate = null, bool asNoTracking = false,
+    public async Task<List<T>> GetAllAsync(
+        Expression<Func<T, bool>>? predicate = null,
         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
-        Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null)
+        Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+        bool asNoTracking = false)
     {
         IQueryable<T> queryable = _context.Set<T>();
 
@@ -52,29 +60,33 @@ public class EfCoreRepository<T> : IRepository<T> where T : BaseEntity
         if (orderBy != null)
             queryable = orderBy(queryable);
 
-        if (!asNoTracking)
+        if (asNoTracking)
             queryable = queryable.AsNoTracking();
 
         return await queryable.ToListAsync();
     }
 
-    public async virtual Task<T> GetByIdAsync(int id)
+    public async Task<T> AddAsync(T entity)
     {
-        var entity = await _context.Set<T>().FindAsync(id);
-        if(entity == null)
-            throw new NullReferenceException($"{nameof(entity)} is null");
+        if (entity == null)
+            throw new ArgumentNullException(nameof(entity));
+
+        await _context.Set<T>().AddAsync(entity);
+        await _context.SaveChangesAsync();
+
         return entity;
     }
 
-    public async virtual void RemoveAsync(T entity)
+
+    public async Task UpdateAsync(T entity)
     {
-        _context.Set<T>().Remove(entity);
+        _context.Set<T>().Update(entity);
         await _context.SaveChangesAsync();
     }
 
-    public async virtual void UpdateAsync(T entity)
+    public async Task RemoveAsync(T entity)
     {
-        _context.Set<T>().Update(entity);
+        _context.Set<T>().Remove(entity);
         await _context.SaveChangesAsync();
     }
 }

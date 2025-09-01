@@ -1,0 +1,8 @@
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.csproj.AssemblyReference.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.AssemblyInfoInputs.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.AssemblyInfo.cs
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.csproj.CoreCompileInputs.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSellingAPI\obj\Debug\net8.0\TicketSellingAPI.sourcelink.json

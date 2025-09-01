@@ -25,30 +25,30 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
         _mapper = config.CreateMapper();
     }
 
-    public virtual void AddAsync(TCreateDto createDto)
+    public virtual Task<TEntity> AddAsync(TCreateDto createDto)
     {
         TEntity entity = _mapper.Map<TEntity>(createDto);
 
-        _repository.AddAsync(entity);
+        return _repository.AddAsync(entity);
     }
 
-    public async virtual Task<TDto> Get(Expression<Func<TEntity, bool>> predicate, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null)
+    public async virtual Task<TDto> GetAsync(Expression<Func<TEntity, bool>> predicate, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null)
     {
-        var entity = await _repository.GetAsync(predicate, asNoTracking, include);
+        var entity = await _repository.GetAsync(predicate, include);
         var dto = _mapper.Map<TDto>(entity);
 
         return dto;
     }
 
-    public async virtual Task<List<TDto> >GetAll(Expression<Func<TEntity, bool>>? predicate = null, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null)
+    public async virtual Task<List<TDto> >GetAllAsync(Expression<Func<TEntity, bool>>? predicate = null, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null)
     {
-        var entities = await _repository.GetAllAsync(predicate, asNoTracking, include, orderBy);
+        var entities = await _repository.GetAllAsync(predicate, include, orderBy);
         var dtos = _mapper.Map<List<TDto>>(entities);
 
         return dtos;
     }
 
-    public async virtual Task<TDto> GetById(int id)
+    public async virtual Task<TDto> GetByIdAsync(int id)
     {
         var entity = await _repository.GetByIdAsync(id);
         var dto = _mapper.Map<TDto>(entity);
@@ -56,7 +56,7 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
         return dto;
     }
 
-    public async virtual void Remove(int id)
+    public async virtual void RemoveAsync(int id)
     {
         var entity = await _repository.GetByIdAsync(id);
 
@@ -65,10 +65,10 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
             throw new Exception("Entity not found");
         }
 
-        _repository.RemoveAsync(entity);
+        await _repository.RemoveAsync(entity);
     }
 
-    public virtual void Update(TUpdateDto updateDto)
+    public virtual void UpdateAsync(TUpdateDto updateDto)
     {
         var entity = _mapper.Map<TEntity>(updateDto);
 

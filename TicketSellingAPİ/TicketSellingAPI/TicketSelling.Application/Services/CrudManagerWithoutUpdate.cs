@@ -34,7 +34,7 @@ public class CrudManagerWithoutUpdate<TEntity, TDto, TCreateDto> : ICrudServiceW
 
     public virtual TDto Get(Expression<Func<TEntity, bool>> predicate, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null)
     {
-        var entity = _repository.GetAsync(predicate, asNoTracking, include);
+        var entity = _repository.GetAsync(predicate, include);
         var dto = _mapper.Map<TDto>(entity);
 
         return dto;
@@ -42,7 +42,7 @@ public class CrudManagerWithoutUpdate<TEntity, TDto, TCreateDto> : ICrudServiceW
 
     public virtual List<TDto> GetAll(Expression<Func<TEntity, bool>>? predicate = null, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null)
     {
-        var entities = _repository.GetAllAsync(predicate, asNoTracking, include, orderBy);
+        var entities = _repository.GetAllAsync(predicate, include, orderBy);
         var dtos = _mapper.Map<List<TDto>>(entities);
 
         return dtos;
@@ -56,16 +56,16 @@ public class CrudManagerWithoutUpdate<TEntity, TDto, TCreateDto> : ICrudServiceW
         return dto;
     }
 
-    public virtual void Remove(int id)
+    public async virtual void Remove(int id)
     {
-        var entity = _repository.GetByIdAsync(id);
+        var entity = await _repository.GetByIdAsync(id);
 
         if (entity == null)
         {
             throw new Exception("Entity not found");
         }
 
-        _repository.Remove(entity);
+        _repository.RemoveAsync(entity);
     }
 
 }

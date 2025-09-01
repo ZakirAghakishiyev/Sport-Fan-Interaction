@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CAProject\\TicketSellingAPI\\TicketSellingAPI.csproj": {}
+    "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\TicketSellingAPI.csproj": {}
   },
   "projects": {
-    "E:\\CAProject\\TicketSellingAPI\\TicketSellingAPI.csproj": {
+    "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\TicketSellingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CAProject\\TicketSellingAPI\\TicketSellingAPI.csproj",
+        "projectUniqueName": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\TicketSellingAPI.csproj",
         "projectName": "TicketSellingAPI",
-        "projectPath": "E:\\CAProject\\TicketSellingAPI\\TicketSellingAPI.csproj",
+        "projectPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\TicketSellingAPI.csproj",
         "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
-        "outputPath": "E:\\CAProject\\TicketSellingAPI\\obj\\",
+        "outputPath": "E:\\CodeAcademyProject\\TicketSellingAPİ\\TicketSellingAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
+    "Method": "GetById",
+    "RelativePath": "{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
+    "Method": "GetAll",
+    "RelativePath": "api/Merchandise",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
+    "Method": "Create",
+    "RelativePath": "api/Merchandise",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createDto",
+        "Type": "TicketSelling.Application.Dtos.Merchandise.MerchandiseCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

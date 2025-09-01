@@ -12,22 +12,23 @@ public class UserRepository : IUserRepository
     {
         _context = context;
     }
+
     public void Add(User entity)
     {
         throw new NotImplementedException();
     }
 
-    public User Get(Expression<Func<User, bool>> predicate)
+    public Task<User> Get(Expression<Func<User, bool>> predicate)
     {
         throw new NotImplementedException();
     }
 
-    public List<User> GetAll()
+    public List<Task<User>> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public User GetById(int id)
+    public Task<User> GetById(int id)
     {
         throw new NotImplementedException();
     }

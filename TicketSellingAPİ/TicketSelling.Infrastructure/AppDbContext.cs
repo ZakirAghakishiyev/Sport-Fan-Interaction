@@ -21,4 +21,24 @@ public class AppDbContext:DbContext
     DbSet<Sector> Sectors{ get; set; }
     DbSet<Stadium> Stadiums { get; set; }
     DbSet<User> Users { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // MatchesSectorPrice → Match (keep cascade)
+        modelBuilder.Entity<MatchSectorPrice>()
+            .HasOne(msp => msp.Match)
+            .WithMany(m => m.SectorPrices)
+            .HasForeignKey(msp => msp.MatchId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // MatchesSectorPrice → Sector (remove cascade to avoid multiple paths)
+        modelBuilder.Entity<MatchSectorPrice>()
+            .HasOne(msp => msp.Sector)
+            .WithMany()
+            .HasForeignKey(msp => msp.SectorId)
+            .OnDelete(DeleteBehavior.Restrict); // or DeleteBehavior.NoAction
+    }
+
 }
