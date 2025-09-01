@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Details - Football Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-futbol"></i>
+                <span>Football Club</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+                <li class="user-menu">
+                    <a href="#" class="nav-link" id="userMenuBtn">
+                        <i class="fas fa-user"></i>
+                        <span id="userName">User</span>
+                    </a>
+                    <div class="dropdown-menu" id="userDropdown">
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Match Details -->
+            <section class="match-details">
+                <div class="match-header">
+                    <div class="match-info">
+                        <h1 id="matchTitle">Match Title</h1>
+                        <div class="match-meta">
+                            <span class="match-date" id="matchDate">Date</span>
+                            <span class="match-time" id="matchTime">Time</span>
+                            <span class="match-stadium" id="matchStadium">Stadium</span>
+                        </div>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home-team">
+                            <span class="team-name" id="homeTeam">Home Team</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team away-team">
+                            <span class="team-name" id="awayTeam">Away Team</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seat Selection -->
+            <section class="seat-selection">
+                <div class="selection-container">
+                    <div class="stadium-map">
+                        <h2>Select Your Seat</h2>
+                        <div class="stadium-layout">
+                            <div class="field">
+                                <div class="field-label">PITCH</div>
+                            </div>
+                            <div class="stands">
+                                <div class="stand north" id="northStand">
+                                    <h3>North Stand</h3>
+                                    <div class="sectors" id="northSectors">
+                                        <!-- Sectors will be loaded here -->
+                                    </div>
+                                </div>
+                                <div class="stand south" id="southStand">
+                                    <h3>South Stand</h3>
+                                    <div class="sectors" id="southSectors">
+                                        <!-- Sectors will be loaded here -->
+                                    </div>
+                                </div>
+                                <div class="stand east" id="eastStand">
+                                    <h3>East Stand</h3>
+                                    <div class="sectors" id="eastSectors">
+                                        <!-- Sectors will be loaded here -->
+                                    </div>
+                                </div>
+                                <div class="stand west" id="westStand">
+                                    <h3>West Stand</h3>
+                                    <div class="sectors" id="westSectors">
+                                        <!-- Sectors will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h2>Booking Summary</h2>
+                        <div class="summary-content">
+                            <div class="selected-seat" id="selectedSeatInfo">
+                                <p>No seat selected</p>
+                            </div>
+                            <div class="price-breakdown">
+                                <div class="price-item">
+                                    <span>Ticket Price:</span>
+                                    <span id="ticketPrice">$0</span>
+                                </div>
+                                <div class="price-item">
+                                    <span>Service Fee:</span>
+                                    <span id="serviceFee">$0</span>
+                                </div>
+                                <div class="price-total">
+                                    <span>Total:</span>
+                                    <span id="totalPrice">$0</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-full" id="bookTicketBtn" disabled>
+                                Book Ticket
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Match Information -->
+            <section class="match-info-section">
+                <div class="info-tabs">
+                    <button class="tab-btn active" data-tab="details">Match Details</button>
+                    <button class="tab-btn" data-tab="rules">Stadium Rules</button>
+                    <button class="tab-btn" data-tab="transport">Transportation</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="details">
+                        <h3>Match Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <strong>Date:</strong>
+                                    <span id="infoDate">-</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Time:</strong>
+                                    <span id="infoTime">-</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Venue:</strong>
+                                    <span id="infoVenue">-</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Capacity:</strong>
+                                    <span id="infoCapacity">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="rules">
+                        <h3>Stadium Rules</h3>
+                        <ul class="rules-list">
+                            <li>No smoking inside the stadium</li>
+                            <li>No outside food or beverages</li>
+                            <li>No large bags or backpacks</li>
+                            <li>No professional cameras</li>
+                            <li>Follow security instructions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-pane" id="transport">
+                        <h3>Transportation</h3>
+                        <div class="transport-info">
+                            <div class="transport-item">
+                                <i class="fas fa-train"></i>
+                                <div>
+                                    <strong>Train:</strong>
+                                    <span>Nearest station: Central Station (10 min walk)</span>
+                                </div>
+                            </div>
+                            <div class="transport-item">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <strong>Bus:</strong>
+                                    <span>Routes 101, 102, 103 stop at Stadium Road</span>
+                                </div>
+                            </div>
+                            <div class="transport-item">
+                                <i class="fas fa-car"></i>
+                                <div>
+                                    <strong>Parking:</strong>
+                                    <span>Limited parking available. Arrive early.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Booking Confirmation Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="booking-confirmation">
+                <div class="confirmation-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Booking Confirmed!</h2>
+                </div>
+                <div class="ticket-details">
+                    <div class="ticket-qr">
+                        <div id="qrCode"></div>
+                        <p>Scan this QR code at the entrance</p>
+                    </div>
+                    <div class="ticket-info">
+                        <h3>Ticket Information</h3>
+                        <div class="info-row">
+                            <span>Match:</span>
+                            <span id="confirmMatch">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Seat:</span>
+                            <span id="confirmSeat">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Date:</span>
+                            <span id="confirmDate">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Time:</span>
+                            <span id="confirmTime">-</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirmation-actions">
+                    <button class="btn btn-secondary" onclick="window.print()">Print Ticket</button>
+                    <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/matches.js"></script>
+    <script src="js/tickets.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

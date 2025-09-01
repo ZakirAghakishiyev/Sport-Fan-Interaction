@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Details - İmişli FK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="imisli-logo">
+                    <img src="img/image.png" alt="İmişli FK Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 50%;" />
+                </div>
+                <span>İmişli FK</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section class="cart-details-section">
+                <h1>Your Cart</h1>
+                <div class="cart-items" id="cartItemsList">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                <div class="cart-summary" id="cartSummary">
+                    <!-- Cart summary will be loaded here -->
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-primary" id="checkoutBtn"><i class="fas fa-credit-card"></i> Proceed to Checkout</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+    // Demo: Load cart items from demo data
+    const DEMO_CART = [
+      {
+        id: 1,
+        name: "İmişli FK Home Jersey",
+        price: 49.99,
+        quantity: 1,
+        imageUrl: "img/image.png"
+      },
+      {
+        id: 2,
+        name: "İmişli FK Scarf",
+        price: 14.99,
+        quantity: 2,
+        imageUrl: "img/image.png"
+      }
+    ];
+    const CART_KEY = 'imisli_cart_demo';
+
+    function syncCartStorage(cart) {
+      try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch {}
+    }
+
+    function renderCartItems(cart) {
+      const list = document.getElementById('cartItemsList');
+      if (!cart || cart.length === 0) {
+        list.innerHTML = '<p class="no-items">Your cart is empty.</p>';
+        syncCartStorage([]);
+        return;
+      }
+      list.innerHTML = '';
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <div class="cart-item-image">
+            <img src="${item.imageUrl}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px; background: #fff; padding: 4px;" />
+          </div>
+          <div class="cart-item-details">
+            <span class="cart-item-title">${item.name}</span>
+            <span class="cart-item-price">$${item.price.toFixed(2)}</span>
+            <span class="cart-item-quantity">Qty: ${item.quantity}</span>
+            <button class="btn btn-small btn-danger" onclick="removeCartItem(${item.id})"><i class="fas fa-trash"></i></button>
+          </div>
+        `;
+        list.appendChild(div);
+      });
+      syncCartStorage(cart);
+    }
+
+    function renderCartSummary(cart) {
+      const summary = document.getElementById('cartSummary');
+      if (!cart || cart.length === 0) {
+        summary.innerHTML = '';
+        return;
+      }
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      summary.innerHTML = `
+        <div class="summary-row">
+          <span>Total:</span>
+          <span>$${total.toFixed(2)}</span>
+        </div>
+      `;
+    }
+
+    function removeCartItem(id) {
+      // Demo: Remove item from demo cart and re-render
+      const idx = DEMO_CART.findIndex(item => item.id === id);
+      if (idx !== -1) {
+        DEMO_CART.splice(idx, 1);
+        renderCartItems(DEMO_CART);
+        renderCartSummary(DEMO_CART);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartItems(DEMO_CART);
+      renderCartSummary(DEMO_CART);
+
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      checkoutBtn.addEventListener('click', () => {
+        syncCartStorage(DEMO_CART);
+        window.location.href = 'checkout.html';
+      });
+    });
+    </script>
+</body>
+</html> 

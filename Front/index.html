@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Club - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="imisli-logo">
+                    <img src="img/image.png" alt="İmişli FK Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 50%;" />
+                </div>
+                <span>İmişli FK</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+                <li><a href="login.html" class="nav-link" id="loginBtn">Login</a></li>
+                <li><a href="register.html" class="nav-link" id="registerBtn">Register</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to İmişli FK</h1>
+                <p>Support your local heroes! Buy tickets, shop official İmişli FK gear, and join the Azerbaijani football excitement.</p>
+                <div class="hero-buttons">
+                    <a href="dashboard.html" class="btn btn-primary">View Matches</a>
+                    <a href="merchandise.html" class="btn btn-secondary">Shop Merchandise</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose İmişli FK?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-ticket-alt"></i>
+                        <h3>Easy Ticket Booking</h3>
+                        <p>Book your seat for the next Azerbaijan Premier League match in seconds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-gift"></i>
+                        <h3>Loyalty Rewards</h3>
+                        <p>Earn points and win exclusive İmişli FK rewards and experiences.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>Official Merchandise</h3>
+                        <p>Shop authentic İmişli FK shirts, scarves, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-matches">
+            <div class="container">
+                <h2>Upcoming Matches</h2>
+                <div id="matches-container" class="matches-grid">
+                    <!-- Matches will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Football Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/matches.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details - İmişli FK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="imisli-logo">
+                    <img src="img/image.png" alt="İmişli FK Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 50%;" />
+                </div>
+                <span>İmişli FK</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section class="ticket-details-section">
+                <h1>Ticket Details</h1>
+                <div class="ticket-card" id="ticketDetailsCard">
+                    <!-- Ticket details will be loaded here -->
+                </div>
+                <div class="ticket-actions">
+                    <button class="btn btn-primary" id="downloadTicketBtn"><i class="fas fa-download"></i> Download Ticket</button>
+                    <button class="btn btn-secondary" id="transferTicketBtn"><i class="fas fa-share"></i> Transfer Ticket</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/tickets.js"></script>
+    <script>
+    // Demo: Load ticket details from query string or demo data
+    const DEMO_TICKETS = [
+      {
+        id: 101,
+        match: {
+          homeTeam: "İmişli FK",
+          awayTeam: "Qarabağ FK",
+          matchDate: "2024-07-15T19:00:00",
+          stadium: "İmişli Şəhər Stadionu"
+        },
+        sector: "north1",
+        price: 11,
+        status: "confirmed"
+      }
+    ];
+    function renderTicketDetails(ticket) {
+      const card = document.getElementById('ticketDetailsCard');
+      if (!ticket) {
+        card.innerHTML = '<p class="no-items">Ticket not found.</p>';
+        return;
+      }
+      card.innerHTML = `
+        <div class="ticket-header">
+          <h2>${ticket.match.homeTeam} vs ${ticket.match.awayTeam}</h2>
+          <span class="ticket-status status-${ticket.status}">${ticket.status.charAt(0).toUpperCase() + ticket.status.slice(1)}</span>
+        </div>
+        <div class="ticket-meta">
+          <p><strong>Date:</strong> ${ticket.match.matchDate.split('T')[0]}</p>
+          <p><strong>Time:</strong> ${ticket.match.matchDate.split('T')[1]}</p>
+          <p><strong>Stadium:</strong> ${ticket.match.stadium}</p>
+          <p><strong>Sector:</strong> ${ticket.sector}</p>
+          <p><strong>Price:</strong> $${ticket.price}</p>
+        </div>
+      `;
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      // In real app, get ticket ID from query string and fetch from API
+      renderTicketDetails(DEMO_TICKETS[0]);
+    });
+    </script>
+</body>
+</html> 

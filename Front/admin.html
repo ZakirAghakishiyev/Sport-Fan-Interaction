@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Football Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-futbol"></i>
+                <span>Football Club - Admin</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+                <li class="user-menu">
+                    <a href="#" class="nav-link" id="userMenuBtn">
+                        <i class="fas fa-user-shield"></i>
+                        <span id="userName">Admin</span>
+                    </a>
+                    <div class="dropdown-menu" id="userDropdown">
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Admin Header -->
+            <section class="admin-header">
+                <div class="admin-title">
+                    <h1>Admin Panel</h1>
+                    <p>Manage matches, merchandise, and user data</p>
+                </div>
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div class="stat-content">
+                            <span class="stat-number" id="totalTickets">0</span>
+                            <span class="stat-label">Total Tickets</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-content">
+                            <span class="stat-number" id="totalUsers">0</span>
+                            <span class="stat-label">Total Users</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <div class="stat-content">
+                            <span class="stat-number" id="totalOrders">0</span>
+                            <span class="stat-label">Total Orders</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="stat-content">
+                            <span class="stat-number" id="totalRevenue">$0</span>
+                            <span class="stat-label">Total Revenue</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Navigation -->
+            <section class="admin-nav">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" data-tab="matches">Matches</button>
+                    <button class="nav-tab" data-tab="merchandise">Merchandise</button>
+                    <button class="nav-tab" data-tab="users">Users</button>
+                    <button class="nav-tab" data-tab="orders">Orders</button>
+                </div>
+            </section>
+
+            <!-- Matches Management -->
+            <section class="admin-content" id="matchesTab">
+                <div class="content-header">
+                    <h2>Match Management</h2>
+                    <button class="btn btn-primary" id="addMatchBtn">
+                        <i class="fas fa-plus"></i> Add Match
+                    </button>
+                </div>
+                <div class="content-body">
+                    <div id="matchesList" class="admin-list">
+                        <!-- Matches will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Merchandise Management -->
+            <section class="admin-content" id="merchandiseTab" style="display: none;">
+                <div class="content-header">
+                    <h2>Merchandise Management</h2>
+                    <button class="btn btn-primary" id="addProductBtn">
+                        <i class="fas fa-plus"></i> Add Product
+                    </button>
+                </div>
+                <div class="content-body">
+                    <div id="productsList" class="admin-list">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Management -->
+            <section class="admin-content" id="usersTab" style="display: none;">
+                <div class="content-header">
+                    <h2>User Management</h2>
+                    <div class="search-box">
+                        <input type="text" id="userSearch" placeholder="Search users...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <div id="usersList" class="admin-list">
+                        <!-- Users will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Management -->
+            <section class="admin-content" id="ordersTab" style="display: none;">
+                <div class="content-header">
+                    <h2>Order Management</h2>
+                    <div class="filter-group">
+                        <select id="orderStatusFilter">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <div id="ordersList" class="admin-list">
+                        <!-- Orders will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Match Modal -->
+    <div id="addMatchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Match</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="addMatchForm" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="homeTeam">Home Team</label>
+                        <input type="text" id="homeTeam" name="homeTeam" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="awayTeam">Away Team</label>
+                        <input type="text" id="awayTeam" name="awayTeam" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="matchDate">Date</label>
+                        <input type="date" id="matchDate" name="matchDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="matchTime">Time</label>
+                        <input type="time" id="matchTime" name="matchTime" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="stadium">Stadium</label>
+                    <input type="text" id="stadium" name="stadium" required>
+                </div>
+                <div class="form-group">
+                    <label for="capacity">Capacity</label>
+                    <input type="number" id="capacity" name="capacity" required>
+                </div>
+                <div class="form-group">
+                    <label for="basePrice">Base Ticket Price</label>
+                    <input type="number" id="basePrice" name="basePrice" step="0.01" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelMatchBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Match</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="addProductForm" class="admin-form">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice">Price</label>
+                        <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" name="productCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="jerseys">Jerseys</option>
+                            <option value="shirts">Shirts</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="footwear">Footwear</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productStock">Stock Quantity</label>
+                    <input type="number" id="productStock" name="productStock" required>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Image URL</label>
+                    <input type="url" id="productImage" name="productImage" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelProductBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

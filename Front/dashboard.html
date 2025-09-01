@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Football Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-futbol"></i>
+                <span>Football Club</span>
+            </div>
+            <div class="imisli-logo">
+              <img src="img/image.png" alt="İmişli FK Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 50%;" />
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+                <li class="user-menu">
+                    <a href="#" class="nav-link" id="userMenuBtn">
+                        <i class="fas fa-user"></i>
+                        <span id="userName">User</span>
+                    </a>
+                    <div class="dropdown-menu" id="userDropdown">
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Welcome back, <span id="userDisplayName">User</span>!</h1>
+                    <p>Here's your football club dashboard</p>
+                </div>
+            </section>
+
+            <!-- Loyalty Status -->
+            <section class="loyalty-section">
+                <div class="loyalty-card">
+                    <div class="loyalty-header">
+                        <i class="fas fa-crown"></i>
+                        <h2>Loyalty Status</h2>
+                    </div>
+                    <div class="loyalty-content">
+                        <div class="loyalty-tier">
+                            <span class="tier-badge" id="tierBadge">Bronze</span>
+                            <h3 id="tierName">Bronze Member</h3>
+                        </div>
+                        <div class="loyalty-points">
+                            <div class="points-display">
+                                <span class="points-number" id="pointsNumber">0</span>
+                                <span class="points-label">Points</span>
+                            </div>
+                            <div class="points-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="pointsProgress"></div>
+                                </div>
+                                <span class="progress-text" id="progressText">0 / 100 points to next tier</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="#" class="action-card" id="bookTicketBtn">
+                        <i class="fas fa-ticket-alt"></i>
+                        <h3>Book Tickets</h3>
+                        <p>Find and book match tickets</p>
+                    </a>
+                    <a href="merchandise.html" class="action-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>Shop Merchandise</h3>
+                        <p>Browse official club gear</p>
+                    </a>
+                    <a href="#" class="action-card" id="viewRewardsBtn">
+                        <i class="fas fa-gift"></i>
+                        <h3>My Rewards</h3>
+                        <p>View your earned rewards</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Upcoming Matches -->
+            <section class="upcoming-matches-section">
+                <div class="section-header">
+                    <h2>Upcoming Matches</h2>
+                    <a href="#" class="view-all-link" data-section="matches">View All</a>
+                </div>
+                <div id="upcomingMatches" class="matches-grid">
+                    <!-- Matches will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Recent Tickets -->
+            <section class="recent-tickets-section">
+                <div class="section-header">
+                    <h2>Recent Tickets</h2>
+                    <a href="#" class="view-all-link" data-section="tickets">View All</a>
+                </div>
+                <div id="recentTickets" class="tickets-grid">
+                    <!-- Recent tickets will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Recent Rewards -->
+            <section class="recent-rewards-section">
+                <div class="section-header">
+                    <h2>Recent Rewards</h2>
+                    <a href="#" class="view-all-link" data-section="rewards">View All</a>
+                </div>
+                <div id="recentRewards" class="rewards-grid">
+                    <!-- Recent rewards will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for Match Details -->
+    <div id="matchModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="matchModalContent">
+                <!-- Match details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/loyalty.js"></script>
+    <script src="js/matches.js"></script>
+    <script src="js/tickets.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
