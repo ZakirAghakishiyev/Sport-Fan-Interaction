@@ -26,19 +26,30 @@ public class AppDbContext:DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // MatchesSectorPrice → Match (keep cascade)
         modelBuilder.Entity<MatchSectorPrice>()
             .HasOne(msp => msp.Match)
             .WithMany(m => m.SectorPrices)
             .HasForeignKey(msp => msp.MatchId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // MatchesSectorPrice → Sector (remove cascade to avoid multiple paths)
         modelBuilder.Entity<MatchSectorPrice>()
             .HasOne(msp => msp.Sector)
             .WithMany()
             .HasForeignKey(msp => msp.SectorId)
-            .OnDelete(DeleteBehavior.Restrict); // or DeleteBehavior.NoAction
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<Ticket>()
+            .HasOne(t => t.Seat)
+            .WithMany()
+            .HasForeignKey(t => t.SeatId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<Ticket>()
+            .HasOne(t => t.User)
+            .WithMany()
+            .HasForeignKey(t => t.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+
     }
 
 }

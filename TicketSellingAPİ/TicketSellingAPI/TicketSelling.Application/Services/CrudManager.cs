@@ -25,11 +25,12 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
         _mapper = config.CreateMapper();
     }
 
-    public virtual Task<TEntity> AddAsync(TCreateDto createDto)
+    public async virtual Task<TDto> AddAsync(TCreateDto createDto)
     {
         TEntity entity = _mapper.Map<TEntity>(createDto);
 
-        return _repository.AddAsync(entity);
+        var res=await _repository.AddAsync(entity);
+        return _mapper.Map<TDto>(res);
     }
 
     public async virtual Task<TDto> GetAsync(Expression<Func<TEntity, bool>> predicate, bool asNoTracking = false, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null)
@@ -56,7 +57,7 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
         return dto;
     }
 
-    public async virtual void RemoveAsync(int id)
+    public async virtual Task RemoveAsync(int id)
     {
         var entity = await _repository.GetByIdAsync(id);
 
@@ -68,10 +69,12 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
         await _repository.RemoveAsync(entity);
     }
 
-    public virtual void UpdateAsync(TUpdateDto updateDto)
+    public async virtual Task<TDto> UpdateAsync(TUpdateDto updateDto)
     {
         var entity = _mapper.Map<TEntity>(updateDto);
 
-        _repository.UpdateAsync(entity);
+        var res=await _repository.UpdateAsync(entity);
+        return _mapper.Map<TDto>(res);
     }
+
 }

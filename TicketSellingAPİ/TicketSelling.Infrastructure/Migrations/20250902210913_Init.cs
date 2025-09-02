@@ -309,7 +309,8 @@ namespace TicketSelling.Infrastructure.Migrations
                     SeatId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    IsGiftedUpgrade = table.Column<bool>(type: "bit", nullable: false)
+                    IsGiftedUpgrade = table.Column<bool>(type: "bit", nullable: false),
+                    UserId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -325,13 +326,18 @@ namespace TicketSelling.Infrastructure.Migrations
                         column: x => x.SeatId,
                         principalTable: "Seats",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Tickets_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Tickets_Users_UserId1",
+                        column: x => x.UserId1,
+                        principalTable: "Users",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -439,6 +445,11 @@ namespace TicketSelling.Infrastructure.Migrations
                 name: "IX_Tickets_UserId",
                 table: "Tickets",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tickets_UserId1",
+                table: "Tickets",
+                column: "UserId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserSavedCard_CardDetailsId",

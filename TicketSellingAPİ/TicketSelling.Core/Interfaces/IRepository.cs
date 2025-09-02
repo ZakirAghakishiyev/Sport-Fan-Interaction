@@ -20,6 +20,6 @@ public interface IRepository<T> where T : BaseEntity
         bool asNoTracking = false);
 
     Task<T> AddAsync(T entity);
-    Task UpdateAsync(T entity);
+    Task<T> UpdateAsync(T entity);
     Task RemoveAsync(T entity);
 }

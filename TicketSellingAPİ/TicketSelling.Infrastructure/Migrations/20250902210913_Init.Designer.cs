@@ -12,7 +12,7 @@ using TicketSelling.Infrastructure;
 namespace TicketSelling.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250901231504_Init")]
+    [Migration("20250902210913_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -379,6 +379,9 @@ namespace TicketSelling.Infrastructure.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MatchId");
@@ -386,6 +389,8 @@ namespace TicketSelling.Infrastructure.Migrations
                     b.HasIndex("SeatId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Tickets");
                 });
@@ -606,14 +611,18 @@ namespace TicketSelling.Infrastructure.Migrations
                     b.HasOne("TicketSelling.Core.Entities.Seat", "Seat")
                         .WithMany()
                         .HasForeignKey("SeatId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TicketSelling.Core.Entities.User", "User")
-                        .WithMany("Tickets")
+                        .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("TicketSelling.Core.Entities.User", null)
+                        .WithMany("Tickets")
+                        .HasForeignKey("UserId1");
 
                     b.Navigation("Match");
 

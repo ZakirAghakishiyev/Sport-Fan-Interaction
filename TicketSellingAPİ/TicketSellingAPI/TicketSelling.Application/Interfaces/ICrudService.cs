@@ -11,7 +11,7 @@ public interface ICrudService<TEntity, TDto, TCreateDto, TUpdateDto>
     Task<List<TDto>> GetAllAsync(Expression<Func<TEntity, bool>>? predicate = null, bool asNoTracking = false,
         Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null);
-    Task<TEntity> AddAsync(TCreateDto createDto);
-    void UpdateAsync(TUpdateDto updateDto);
-    void RemoveAsync(int id);
+    Task<TDto> AddAsync(TCreateDto createDto);
+    Task<TDto> UpdateAsync(TUpdateDto updateDto);
+    Task RemoveAsync(int id);
 }
