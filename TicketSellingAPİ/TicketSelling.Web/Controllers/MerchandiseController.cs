@@ -27,7 +27,7 @@ public class MerchandiseController(IMerchandiseService _service, IMapper _mapper
         return CreatedAtAction(nameof(GetById), new { id = newMerchandise.Id }, newMerchandise);
     }
 
-    [HttpGet("/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById([FromRoute]int id)
     {
         var merch=await _service.GetByIdAsync(id);
@@ -35,24 +35,21 @@ public class MerchandiseController(IMerchandiseService _service, IMapper _mapper
         return Ok(merch);
     }
 
-    [HttpPut("/{id}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] MerchandiseUpdateRequest req)
     {
-        var merch=GetById(id);
-        if(merch == null) throw new NullReferenceException();
+        if(req == null) throw new NullReferenceException();
         var updateDto = _mapper.Map<MerchandiseUpdateDto>(req);
         updateDto.Id = id;
         var res=await _service.UpdateAsync(updateDto);
         return Ok(res);
     }
 
-    [HttpDelete("/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
-        var merch = GetById(id);
-        if (merch == null) throw new NullReferenceException();
         await _service.RemoveAsync(id);
-        return Ok(merch.Id);
+        return Ok();
     }
 
 

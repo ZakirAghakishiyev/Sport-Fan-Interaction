@@ -28,6 +28,7 @@ public class Program
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
         });
         builder.Services.AddScoped<IMerchandiseService, MerchandiseManager>();
+        builder.Services.AddAutoMapper(typeof(Program));
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

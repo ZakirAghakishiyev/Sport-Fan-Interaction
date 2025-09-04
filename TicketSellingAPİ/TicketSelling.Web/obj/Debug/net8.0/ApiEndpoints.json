@@ -1,8 +1,34 @@
 [
   {
     "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
+    "Method": "GetAll",
+    "RelativePath": "api/Merchandise",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
+    "Method": "Create",
+    "RelativePath": "api/Merchandise",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createDto",
+        "Type": "TicketSelling.Application.Dtos.Merchandise.MerchandiseCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
     "Method": "GetById",
-    "RelativePath": "{id}",
+    "RelativePath": "api/Merchandise/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -18,7 +44,7 @@
   {
     "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
     "Method": "Update",
-    "RelativePath": "{id}",
+    "RelativePath": "api/Merchandise/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -39,7 +65,7 @@
   {
     "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
     "Method": "Delete",
-    "RelativePath": "{id}",
+    "RelativePath": "api/Merchandise/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -47,32 +73,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
-    "Method": "GetAll",
-    "RelativePath": "api/Merchandise",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TicketSelling.Web.Controllers.MerchandiseController",
-    "Method": "Create",
-    "RelativePath": "api/Merchandise",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createDto",
-        "Type": "TicketSelling.Application.Dtos.Merchandise.MerchandiseCreateDto",
         "IsRequired": true
       }
     ],

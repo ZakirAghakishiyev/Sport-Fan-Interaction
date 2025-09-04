@@ -46,7 +46,7 @@
         }
       }
     },
-    "/{id}": {
+    "/api/Merchandise/{id}": {
       "get": {
         "tags": [
           "Merchandise"
