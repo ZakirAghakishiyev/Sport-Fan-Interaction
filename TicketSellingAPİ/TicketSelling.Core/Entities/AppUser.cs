@@ -2,7 +2,7 @@
 
 namespace TicketSelling.Core.Entities;
 
-public class User : IdentityUser<int>
+public class AppUser : IdentityUser<int>
 {
     public int LoyaltyPoints { get; set; }
     public LoyaltyTier LoyaltyTier { get; set; }

@@ -13,32 +13,32 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public void Add(User entity)
+    public void Add(AppUser entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<User> Get(Expression<Func<User, bool>> predicate)
+    public Task<AppUser> Get(Expression<Func<AppUser, bool>> predicate)
     {
         throw new NotImplementedException();
     }
 
-    public List<Task<User>> GetAll()
+    public List<Task<AppUser>> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public Task<User> GetById(int id)
+    public Task<AppUser> GetById(int id)
     {
         throw new NotImplementedException();
     }
 
-    public void Remove(User entity)
+    public void Remove(AppUser entity)
     {
         throw new NotImplementedException();
     }
 
-    public void Update(User entity)
+    public void Update(AppUser entity)
     {
         throw new NotImplementedException();
     }

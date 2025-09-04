@@ -20,7 +20,7 @@ public class AppDbContext:DbContext
     DbSet<OrderItem> OrderItems { get; set; }
     DbSet<Sector> Sectors{ get; set; }
     DbSet<Stadium> Stadiums { get; set; }
-    DbSet<User> Users { get; set; }
+    DbSet<AppUser> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

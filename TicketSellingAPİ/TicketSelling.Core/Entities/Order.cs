@@ -7,6 +7,6 @@
         public decimal TotalAmount { get; set; }
         public List<OrderItem> Items { get; set; } = [];
         public Payment? Payment { get; set; }
-        public User? User { get; set; }
+        public AppUser? User { get; set; }
     }
 }

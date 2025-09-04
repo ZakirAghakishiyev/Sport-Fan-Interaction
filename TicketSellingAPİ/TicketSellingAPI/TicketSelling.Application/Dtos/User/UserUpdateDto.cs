@@ -2,9 +2,9 @@
 
 namespace TicketSelling.Application.Dtos.User;
 
-public class UserUpdateDto 
+public class UserUpdateDto
 {
     public string? Email { get; set; }
-    public int LoyaltyPoints { get; set; }
-    public LoyaltyTier LoyaltyTier { get; set; }
+    public string? PhoneNumber { get; set; }
 }
+

@@ -1,14 +1,11 @@
-﻿namespace TicketSelling.Core.Entities
+﻿namespace TicketSelling.Core.Entities;
+
+public enum SeatClass
 {
-    public enum SeatClass
-    {
-        VIP = 1,
-        Premium,
-        Standard,
-        Economy,
-        Media,
-        Accessible
-    }
-
-
+    VIP = 1,
+    Premium,
+    Standard,
+    Economy,
+    Media,
+    Accessible
 }

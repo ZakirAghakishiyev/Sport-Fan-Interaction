@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TicketSelling.Application.Interfaces;
 using TicketSelling.Application.Services;
+using TicketSelling.Core.Entities;
 using TicketSelling.Core.Interfaces;
 using TicketSelling.Infrastructure;
 using TicketSelling.Infrastructure.Repositories;
@@ -28,6 +30,17 @@ public class Program
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
         });
         builder.Services.AddScoped<IMerchandiseService, MerchandiseManager>();
+        builder.Services.AddIdentity<AppUser, IdentityRole<int>>(options =>
+        {
+            options.Password.RequireDigit = true;
+            options.Password.RequiredLength = 4;
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireUppercase = true;
+            options.Password.RequireLowercase = true;
+        })
+        .AddEntityFrameworkStores<AppDbContext>() 
+        .AddDefaultTokenProviders();
+
         builder.Services.AddAutoMapper(typeof(Program));
         var app = builder.Build();
 
