@@ -51,7 +51,5 @@ public class MerchandiseController(IMerchandiseService _service, IMapper _mapper
         await _service.RemoveAsync(id);
         return Ok();
     }
-
-
 }
 

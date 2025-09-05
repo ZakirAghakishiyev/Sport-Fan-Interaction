@@ -66,6 +66,28 @@
           }
         }
       },
+      "Elastic.Clients.Elasticsearch/9.1.6": {
+        "dependencies": {
+          "Elastic.Transport": "0.10.1"
+        },
+        "runtime": {
+          "lib/net8.0/Elastic.Clients.Elasticsearch.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.1.6.0"
+          }
+        }
+      },
+      "Elastic.Transport/0.10.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/net8.0/Elastic.Transport.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.10.1.0"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -345,6 +367,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/5.1.6": {
         "dependencies": {
           "Azure.Identity": "1.11.4",
@@ -1013,6 +1036,7 @@
       "TicketSelling.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "Elastic.Clients.Elasticsearch": "9.1.6",
           "TicketSelling.Core": "1.0.0",
           "TicketSelling.Infrastructure": "1.0.0"
         },
@@ -1075,6 +1099,20 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "Elastic.Clients.Elasticsearch/9.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SeAMGNj/TsS4E24mrWI/UIBeiD31n9Qr4pjhvgFOE+77I9lJRFWqL6zz7JZQEMStJtJcLfHUvhnUXCyE/veVOw==",
+      "path": "elastic.clients.elasticsearch/9.1.6",
+      "hashPath": "elastic.clients.elasticsearch.9.1.6.nupkg.sha512"
+    },
+    "Elastic.Transport/0.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8qUyxd4LzMiR+wtNEzdHHnu+iEpbKfoA001NyYgZZT0YZaNE9fWmFeZMxcTz7HMcYUidZSeT6vvongjZh1j/hQ==",
+      "path": "elastic.transport/0.10.1",
+      "hashPath": "elastic.transport.0.10.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -1152,6 +1190,13 @@
       "sha512": "sha512-l4dDRmGELXG72XZaonnOeORyD/T5RpEu5LGHOUIhnv+MmUWDY/m1kWXGwtcgQ5CJ5ynkFiRnIYzTKXYjUs7rbw==",
       "path": "microsoft.codeanalysis.workspaces.common/4.5.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/5.1.6": {
       "type": "package",

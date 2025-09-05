@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
+using TicketSelling.Application.Dtos.Merchandise;
+using TicketSelling.Core.Entities;
 
 namespace TicketSelling.Application.Interfaces;
 

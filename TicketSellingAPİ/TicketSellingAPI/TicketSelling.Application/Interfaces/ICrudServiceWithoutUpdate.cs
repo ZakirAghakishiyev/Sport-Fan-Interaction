@@ -5,12 +5,12 @@ namespace TicketSelling.Application.Interfaces;
 
 public interface ICrudServiceWithoutUpdate<TEntity, TDto, TCreateDto>
 {
-    TDto GetById(int id);
-    TDto Get(Expression<Func<TEntity, bool>> predicate, bool asNoTracking = false,
+    Task<TDto> GetByIdAsync(int id);
+    Task<TDto> GetAsync(Expression<Func<TEntity, bool>> predicate, bool asNoTracking = false,
     Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null);
-    List<TDto> GetAll(Expression<Func<TEntity, bool>>? predicate = null, bool asNoTracking = false,
+    Task<List<TDto>> GetAllAsync(Expression<Func<TEntity, bool>>? predicate = null, bool asNoTracking = false,
         Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null);
-    void Add(TCreateDto createDto);
-    void Remove(int id);
+    Task<TDto> AddAsync(TCreateDto createDto);
+    Task RemoveAsync(int id);
 }

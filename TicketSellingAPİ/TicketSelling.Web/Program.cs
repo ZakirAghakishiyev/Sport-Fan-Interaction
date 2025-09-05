@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Elastic.Clients.Elasticsearch;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -22,8 +23,10 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddControllers();
-        builder.Services.AddScoped<IMerchandiseService, MerchandiseManager>();
         builder.Services.AddScoped(typeof(IRepository<>), typeof(EfCoreRepository<>));
+        builder.Services.AddScoped<IMerchandiseService, MerchandiseManager>();
+        builder.Services.AddScoped<ICardDetailsService, CardDetailsManager>();
+        builder.Services.AddScoped<IUserSavedCardService, UserSavedCardManager>();
 
         builder.Services.AddSwaggerGen(c =>
         {

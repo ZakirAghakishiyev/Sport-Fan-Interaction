@@ -160,3 +160,5 @@ E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\Ticke
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\TicketSelling.Web.genruntimeconfig.cache
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\ref\TicketSelling.Web.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Elastic.Transport.dll
