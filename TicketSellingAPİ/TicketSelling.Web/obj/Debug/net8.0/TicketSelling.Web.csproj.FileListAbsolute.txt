@@ -159,3 +159,4 @@ E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\refin
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\TicketSelling.Web.pdb
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\TicketSelling.Web.genruntimeconfig.cache
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\ref\TicketSelling.Web.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

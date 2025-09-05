@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "TicketSelling.Web",
-    "version": "1.0"
+    "title": "TicketSelling API",
+    "version": "v1"
   },
   "paths": {
     "/api/AppUser/register": {
@@ -667,6 +667,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter 'Bearer' [space] and then your valid token.\r\nExample: \"Bearer eyJhbGci...\"",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

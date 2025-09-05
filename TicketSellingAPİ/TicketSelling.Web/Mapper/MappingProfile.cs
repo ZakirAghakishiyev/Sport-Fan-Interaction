@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using TicketSelling.Application.Dtos.Merchandise;
+using TicketSelling.Application.Dtos.User;
 using TicketSelling.Core.Entities;
 using TicketSelling.Web.Requests;
 
@@ -13,5 +14,8 @@ public class MappingProfile : Profile
         CreateMap<MerchandiseDto, Merchandise>().ReverseMap();   
         CreateMap<MerchandiseUpdateDto, Merchandise>().ReverseMap();   
         CreateMap<MerchandiseUpdateRequest, MerchandiseUpdateDto>().ReverseMap();
+
+        CreateMap<AppUser, UserDto>().ReverseMap();
+
     }
 }

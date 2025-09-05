@@ -1,26 +1,26 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TicketSelling.Core.Entities;
 
 namespace TicketSelling.Infrastructure;
 
-public class AppDbContext:DbContext
+public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
-
     }
 
-    DbSet<Ticket> Tickets { get; set; }
-    DbSet<Seat> Seats { get; set; }
-    DbSet<GiftReward> GiftRewards { get; set; }
-    DbSet<Match> Matches { get; set; }
-    DbSet<MatchSectorPrice> MatchesSectorPrice { get; set; }
-    DbSet<Merchandise> Merchandises { get; set; }
-    DbSet<Order> Orders { get; set; }
-    DbSet<OrderItem> OrderItems { get; set; }
-    DbSet<Sector> Sectors{ get; set; }
-    DbSet<Stadium> Stadiums { get; set; }
-    DbSet<AppUser> Users { get; set; }
+    public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<Seat> Seats { get; set; }
+    public DbSet<GiftReward> GiftRewards { get; set; }
+    public DbSet<Match> Matches { get; set; }
+    public DbSet<MatchSectorPrice> MatchesSectorPrice { get; set; }
+    public DbSet<Merchandise> Merchandises { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<Sector> Sectors { get; set; }
+    public DbSet<Stadium> Stadiums { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -46,10 +46,8 @@ public class AppDbContext:DbContext
 
         modelBuilder.Entity<Ticket>()
             .HasOne(t => t.User)
-            .WithMany()
+            .WithMany(u => u.Tickets) 
             .HasForeignKey(t => t.UserId)
             .OnDelete(DeleteBehavior.Restrict);
-
     }
-
 }

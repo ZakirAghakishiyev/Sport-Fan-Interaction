@@ -1,6 +1,12 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using TicketSelling.Application.Dtos.User;
 using TicketSelling.Core.Entities;
 
@@ -8,7 +14,9 @@ namespace TicketSelling.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AppUserController(UserManager<AppUser> _userManager, SignInManager<AppUser> _signInManager, IMapper _mapper) : ControllerBase
+    public class AppUserController(UserManager<AppUser> _userManager, 
+                SignInManager<AppUser> _signInManager, IMapper _mapper,
+                IConfiguration _configuration) : ControllerBase
     {
 
         [HttpPost("register")]
@@ -42,15 +50,43 @@ namespace TicketSelling.Web.Controllers
             if (user == null)
                 return Unauthorized("Invalid username or password.");
 
-            var result = await _signInManager.PasswordSignInAsync(user, dto.Password, dto.RememberMe, lockoutOnFailure: false);
-
+            var result = await _signInManager.CheckPasswordSignInAsync(user, dto.Password, false);
             if (!result.Succeeded)
                 return Unauthorized("Invalid username or password.");
 
-            return Ok(new { message = "Login successful." });
+            // Create JWT token
+            var authClaims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
+            // You can add role claims if needed
+            var roles = await _userManager.GetRolesAsync(user);
+            foreach (var role in roles)
+            {
+                authClaims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var jwtSettings = _configuration.GetSection("JwtSettings");
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]));
+
+            var token = new JwtSecurityToken(
+                issuer: jwtSettings["Issuer"],
+                audience: jwtSettings["Audience"],
+                expires: DateTime.Now.AddHours(3),
+                claims: authClaims,
+                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+            );
+
+            return Ok(new
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                expiration = token.ValidTo
+            });
         }
-
-
+        [Authorize]
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
@@ -83,7 +119,7 @@ namespace TicketSelling.Web.Controllers
             // Generate reset token
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-            // ⚡ Normally you would EMAIL this token to the user.
+            // Normally you would EMAIL this token to the user.
             // For testing, we return it directly in response.
             return Ok(new
             {
@@ -120,7 +156,8 @@ namespace TicketSelling.Web.Controllers
             var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
                 return NotFound();
-            return Ok(user);
+            var res = _mapper.Map<UserDto>(user);
+            return Ok(res);
         }
 
         [HttpPut("{id}")]
