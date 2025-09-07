@@ -237,26 +237,36 @@ namespace TicketSelling.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("All16Digits")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("CardHolderName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("CardType")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("Encoded16Digits")
+                    b.Property<int?>("Cvc")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<string>("EncodedCardHolderName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("EncodedCvc")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("EncodedExpirationDate")
+                    b.Property<DateTime?>("ExpirationDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("Last4Digits")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 

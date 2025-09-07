@@ -2,6 +2,7 @@
 {
     public class CardDetailsCreateRequest
     {
+        public int UserId {  get; set; }
         public string? PhoneNumber { get; set; }
         public string? CardType { get; set; }
         public int? Last4Digits { get; set; }

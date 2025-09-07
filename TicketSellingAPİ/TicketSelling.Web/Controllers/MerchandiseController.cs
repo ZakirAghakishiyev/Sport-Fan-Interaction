@@ -52,4 +52,3 @@ public class MerchandiseController(IMerchandiseService _service, IMapper _mapper
         return Ok();
     }
 }
-

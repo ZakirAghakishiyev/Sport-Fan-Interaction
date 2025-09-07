@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -250,14 +251,53 @@ namespace TicketSelling.Web.Controllers
         // 4. SAVED CARDS
         // ---------------------------
 
-        //[HttpGet("{id}/cards")]
-        //public async Task<IActionResult> GetUserCards(int id) { ... }
+        [HttpGet("{id}/cards")]
+        public async Task<IActionResult> GetUserCards(int id)
+        {
+            var user = await _userManager.Users
+                .Include(u => u.UserSavedCards)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user == null) return NotFound("User not found.");
+
+            return Ok(user.UserSavedCards);
+        }
 
         //[HttpPost("{id}/cards")]
-        //public async Task<IActionResult> SaveCard(int id, SaveCardDto dto) { ... }
+        //public async Task<IActionResult> SaveCard(int id, [FromBody] SaveCardDto dto)
+        //{
+        //    var user = await _userManager.Users
+        //        .Include(u => u.UserSavedCards)
+        //        .FirstOrDefaultAsync(u => u.Id == id);
 
-        //[HttpDelete("{id}/cards/{cardId}")]
-        //public async Task<IActionResult> DeleteCard(int id, int cardId) { ... }
+        //    if (user == null) return NotFound("User not found.");
+
+        //    var card = _mapper.Map<UserSavedCard>(dto);
+        //    card.UserId = user.Id;
+
+        //    user.UserSavedCards.Add(card);
+        //    await _userManager.UpdateAsync(user);
+
+        //    return Ok(card);
+        //}
+
+        [HttpDelete("{id}/cards/{cardId}")]
+        public async Task<IActionResult> DeleteCard(int id, int cardId)
+        {
+            var user = await _userManager.Users
+                .Include(u => u.UserSavedCards)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user == null) return NotFound("User not found.");
+
+            var card = user.UserSavedCards.FirstOrDefault(c => c.Id == cardId);
+            if (card == null) return NotFound("Card not found.");
+
+            user.UserSavedCards.Remove(card);
+            await _userManager.UpdateAsync(user);
+
+            return NoContent();
+        }
 
         // ---------------------------
         // 5. USER ORDERS / TICKETS
