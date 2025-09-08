@@ -1,14 +1,20 @@
-﻿namespace TicketSelling.Core.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TicketSelling.Core.Entities;
+
+public class Match: BaseEntity
 {
-    public class Match: BaseEntity
-    {
-        public DateTime Date { get; set; }
-        public required string Opponent { get; set; }
-        public int StadiumId { get; set; }
+    [Required(ErrorMessage = "Match date is required")]
+    [DataType(DataType.DateTime)]
+    public DateTime Date { get; set; }
 
-        public Stadium? Stadium { get; set; }
-        public List<MatchSectorPrice> SectorPrices { get; set; } = [];
-    }
+    [Required(ErrorMessage = "Opponent name is required")]
+    [StringLength(150, ErrorMessage = "Opponent name cannot exceed 150 characters")]
+    public required string Opponent { get; set; }
 
+    [Required]
+    public int StadiumId { get; set; }
 
+    public Stadium? Stadium { get; set; }
+    public List<MatchSectorPrice> SectorPrices { get; set; } = [];
 }

@@ -1,13 +1,19 @@
-﻿namespace TicketSelling.Core.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TicketSelling.Core.Entities;
+
+public class MatchSectorPrice: BaseEntity
 {
-    public class MatchSectorPrice: BaseEntity
-    {
-        public int MatchId { get; set; }
-        public int SectorId { get; set; }
-        public decimal Price { get; set; }
-        public Match? Match { get; set; }
-        public Sector? Sector { get; set; }
-    }
+    [Required]
+    public int MatchId { get; set; }
 
+    [Required]
+    public int SectorId { get; set; }
 
+    [Required(ErrorMessage = "Price is required")]
+    [Range(0.01, 10000, ErrorMessage = "Price must be greater than 0")]
+    public decimal Price { get; set; }
+
+    public Match? Match { get; set; }
+    public Sector? Sector { get; set; }
 }
