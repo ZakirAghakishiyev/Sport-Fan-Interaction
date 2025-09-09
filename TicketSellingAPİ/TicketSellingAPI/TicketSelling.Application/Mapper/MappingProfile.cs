@@ -3,6 +3,9 @@ using TicketSelling.Application.Dtos.CardDetails;
 using TicketSelling.Application.Dtos.Merchandise;
 using TicketSelling.Application.Dtos.Order;
 using TicketSelling.Application.Dtos.OrderItem;
+using TicketSelling.Application.Dtos.Seat;
+using TicketSelling.Application.Dtos.Sector;
+using TicketSelling.Application.Dtos.Stadium;
 using TicketSelling.Core.Entities;
 
 namespace TicketSelling.Application.Mapper;
@@ -24,5 +27,20 @@ public class MappingProfile : Profile
         CreateMap<Order, OrderDto>();
         CreateMap<OrderItemCreateDto, OrderItem>();
         CreateMap<OrderItem, OrderItemDto>();
+
+        CreateMap<StadiumCreateDto, Stadium>().ReverseMap();
+        CreateMap<StadiumUpdateDto, Stadium>().ReverseMap();
+        CreateMap<Stadium, StadiumDto>().ReverseMap();
+
+        CreateMap<Sector, SectorDto>()
+            .ForMember(dest => dest.StadiumName, opt => opt.MapFrom(src => src.Stadium!.Name));
+        CreateMap<SectorCreateDto, Sector>();
+        CreateMap<SectorUpdateDto, Sector>();
+
+        CreateMap<Seat, SeatDto>()
+                   .ForMember(dest => dest.Sector, opt => opt.MapFrom(src => src.Sector));
+        CreateMap<SeatCreateDto, Seat>();
+        CreateMap<SeatUpdateDto, Seat>();
+        CreateMap<Seat, SeatUpdateDto>();
     }
 }

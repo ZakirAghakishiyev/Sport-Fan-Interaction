@@ -38,7 +38,7 @@ public class StadiumsController(IMapper _mapper, IStadiumService _service) : Con
     public async Task<ActionResult<StadiumDto>> Update(int id, [FromBody] StadiumUpdateDto dto)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
-        var updated = await _service.UpdateAsync(dto);
+        var updated = await _service.UpdateAsync(id,dto);
         return Ok(updated);
     }
 

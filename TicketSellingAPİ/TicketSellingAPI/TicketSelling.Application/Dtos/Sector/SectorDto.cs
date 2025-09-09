@@ -1,4 +1,5 @@
-﻿using TicketSelling.Application.Dtos.Seat;
+﻿using System.Runtime.CompilerServices;
+using TicketSelling.Application.Dtos.Seat;
 using TicketSelling.Application.Dtos.Stadium;
 using TicketSelling.Core.Entities;
 
@@ -10,6 +11,6 @@ public class SectorDto
     public string Name { get; set; } = string.Empty;
     public SeatClass? SeatClass { get; set; }
 
-    public StadiumDto? Stadium { get; set; }
+    public required string StadiumName { get; set; }
     public List<SeatDto> Seats { get; set; } = [];
 }

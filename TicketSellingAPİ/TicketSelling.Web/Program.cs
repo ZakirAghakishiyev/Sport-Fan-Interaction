@@ -29,6 +29,9 @@ public class Program
         builder.Services.AddScoped<IUserSavedCardService, UserSavedCardManager>();
         builder.Services.AddScoped<IOrderService, OrderManager>();
         builder.Services.AddScoped<IPaymentService, PaymentManager>();
+        builder.Services.AddScoped<IStadiumService, StadiumManager>();
+        builder.Services.AddScoped<ISectorService, SectorManager>();
+        builder.Services.AddScoped<ISeatService, SeatManager>();
 
         builder.Services.AddSwaggerGen(c =>
         {

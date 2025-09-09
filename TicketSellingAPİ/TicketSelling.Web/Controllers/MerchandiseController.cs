@@ -41,7 +41,7 @@ public class MerchandiseController(IMerchandiseService _service, IMapper _mapper
         if(req == null) throw new NullReferenceException();
         var updateDto = _mapper.Map<MerchandiseUpdateDto>(req);
         updateDto.Id = id;
-        var res=await _service.UpdateAsync(updateDto);
+        var res=await _service.UpdateAsync(id, updateDto);
         return Ok(res);
     }
 

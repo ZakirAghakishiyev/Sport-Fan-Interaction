@@ -48,7 +48,7 @@ public class PaymentsController(IMapper _mapper, IPaymentService _service) : Con
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
-        var result = await _service.UpdateAsync(updateDto);
+        var result = await _service.UpdateAsync(id, updateDto);
         return Ok(result);
     }
 

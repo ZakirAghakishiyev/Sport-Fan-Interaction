@@ -69,11 +69,13 @@ public class CrudManager<TEntity, TDto, TCreateDto, TUpdateDto> : ICrudService<T
         await _repository.RemoveAsync(entity);
     }
 
-    public async virtual Task<TDto> UpdateAsync(TUpdateDto updateDto)
+    public async virtual Task<TDto?> UpdateAsync(int id, TUpdateDto updateDto)
     {
-        var entity = _mapper.Map<TEntity>(updateDto);
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return default;
 
-        var res=await _repository.UpdateAsync(entity);
+        _mapper.Map(updateDto, entity); 
+        var res = await _repository.UpdateAsync(entity);
         return _mapper.Map<TDto>(res);
     }
 
