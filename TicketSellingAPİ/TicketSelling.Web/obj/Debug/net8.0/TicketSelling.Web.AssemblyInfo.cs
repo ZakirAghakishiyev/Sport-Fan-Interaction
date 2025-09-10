@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TicketSelling.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9ec162145da9dba440de34e750788319f54f106")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fc204ce0089f5debfb5d0948e6a5b65abf33ed2")]
 [assembly: System.Reflection.AssemblyProductAttribute("TicketSelling.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TicketSelling.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

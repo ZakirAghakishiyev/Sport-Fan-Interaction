@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using TicketSelling.Application.Dtos.CardDetails;
+using TicketSelling.Application.Dtos.Match;
 using TicketSelling.Application.Dtos.Merchandise;
 using TicketSelling.Application.Dtos.Seat;
 using TicketSelling.Application.Dtos.Sector;
@@ -40,5 +41,9 @@ public class MappingProfile : Profile
         CreateMap<SeatCreateDto, Seat>();
         CreateMap<SeatUpdateDto, Seat>();
         CreateMap<Seat, SeatUpdateDto>();
+
+        CreateMap<MatchCreateDto, Match>().ReverseMap();
+        CreateMap<MatchUpdateDto, Match>().ReverseMap();
+        CreateMap<MatchDto, Match>().ReverseMap();
     }
 }
