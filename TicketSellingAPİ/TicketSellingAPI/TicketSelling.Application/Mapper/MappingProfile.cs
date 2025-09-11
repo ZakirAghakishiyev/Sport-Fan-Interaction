@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using TicketSelling.Application.Dtos.CardDetails;
 using TicketSelling.Application.Dtos.Match;
+using TicketSelling.Application.Dtos.MatchSectorPrice;
 using TicketSelling.Application.Dtos.Merchandise;
 using TicketSelling.Application.Dtos.Order;
 using TicketSelling.Application.Dtos.OrderItem;
 using TicketSelling.Application.Dtos.Seat;
 using TicketSelling.Application.Dtos.Sector;
 using TicketSelling.Application.Dtos.Stadium;
+using TicketSelling.Application.Dtos.Ticket;
 using TicketSelling.Core.Entities;
 
 namespace TicketSelling.Application.Mapper;
@@ -44,9 +46,23 @@ public class MappingProfile : Profile
         CreateMap<SeatUpdateDto, Seat>();
         CreateMap<Seat, SeatUpdateDto>();
 
-
         CreateMap<MatchCreateDto, Match>().ReverseMap();
         CreateMap<MatchUpdateDto, Match>().ReverseMap();
         CreateMap<MatchDto, Match>().ReverseMap();
+
+        CreateMap<MatchSectorPrice, MatchSectorPriceDto>().ReverseMap();
+        CreateMap<MatchSectorPrice, MatchSectorPriceCreateDto>().ReverseMap();
+        CreateMap<MatchSectorPrice, MatchSectorPriceUpdateDto>().ReverseMap();
+
+        CreateMap<Ticket, TicketDto>();
+        CreateMap<TicketCreateDto, Ticket>();
+
+        CreateMap<Match, MatchSummaryDto>();
+        CreateMap<Stadium, StadiumSummaryDto>();
+        CreateMap<Seat, SeatSummaryDto>();
+        CreateMap<Sector, SectorSummaryDto>();
+        CreateMap<AppUser, UserSummaryDto>()
+            .ForMember(dest => dest.LoyaltyTier, opt => opt.MapFrom(src => src.LoyaltyTier.ToString()));
+
     }
 }

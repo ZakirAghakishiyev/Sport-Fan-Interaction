@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TicketSelling.Application.Dtos.Match;
+using TicketSelling.Application.Dtos.MatchSectorPrice;
 using TicketSelling.Application.Interfaces;
 using TicketSelling.Core.Entities;
+using TicketSelling.Core.Interfaces;
+using TicketSelling.Infrastructure.Repositories;
 
 namespace TicketSelling.Web.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class MatchesController(IMatchService _service) : ControllerBase
+public class MatchesController(IMatchService _service, IMatchSectorPriceRepository _priceRepo) : ControllerBase
 {
     // GET: api/matches
     [HttpGet]
@@ -86,5 +89,34 @@ public class MatchesController(IMatchService _service) : ControllerBase
         {
             return NotFound(new { message = ex.Message });
         }
+    }
+
+    // POST: api/matches/{id}/sector-prices
+    [HttpPost("{id}/sector-prices")]
+    public async Task<IActionResult> SetSectorPrices(int id, [FromBody] List<MatchSectorPriceCreateDto> prices)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        // remove old prices for this match
+        var existing = await _priceRepo.GetAllAsync(p => p.MatchId == id);
+        foreach (var price in existing)
+        {
+            await _priceRepo.RemoveAsync(price);
+        }
+
+        // add new ones
+        foreach (var dto in prices)
+        {
+            var entity = new MatchSectorPrice
+            {
+                MatchId = id,
+                SectorId = dto.SectorId,
+                Price = dto.Price
+            };
+            await _priceRepo.AddAsync(entity);
+        }
+
+        return Ok(new { message = "Sector prices updated" });
     }
 }

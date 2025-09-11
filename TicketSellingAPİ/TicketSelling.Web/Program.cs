@@ -38,6 +38,8 @@ public class Program
         builder.Services.AddScoped<ISectorService, SectorManager>();
         builder.Services.AddScoped<ISeatService, SeatManager>();
         builder.Services.AddScoped<IMatchService, MatchManager>();
+        builder.Services.AddScoped<ITicketService, TicketManager>();
+        builder.Services.AddScoped<IMatchSectorPriceRepository, MatchSectorPriceRepository>();
 
         builder.Services.AddSwaggerGen(c =>
         {
