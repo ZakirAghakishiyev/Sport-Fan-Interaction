@@ -1,5 +1,5 @@
 // API Configuration
-const API_BASE_URL = 'https://localhost:7001/api'; // Update this to match your ASP.NET Core API URL
+const API_BASE_URL = 'https://localhost:7211'; // Base host; endpoints should start with /api
 const AUTH_DISABLED = true; // Temporary: disable authentication gating
 
 // Utility Functions

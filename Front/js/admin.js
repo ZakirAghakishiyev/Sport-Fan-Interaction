@@ -16,6 +16,7 @@ class Admin {
         }
 
         this.loadAdminStats();
+        this.loadDashboard();
         this.setupEventListeners();
         this.setupTabs();
     }
@@ -103,13 +104,35 @@ class Admin {
     setupTabs() {
         const tabContainer = document.querySelector('.admin-nav');
         if (tabContainer) {
+            const tabs = tabContainer.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-tab');
+                    this.loadTabData(target);
+                });
+            });
             Utils.setupTabs(tabContainer);
+            this.loadTabData('dashboard');
         }
     }
 
     async loadAdminStats() {
         try {
-            const stats = await Utils.get('/admin/stats');
+            // Compose simple stats from available endpoints
+            const [matches, orders, users, payments] = await Promise.all([
+                Utils.get('/api/Matches').catch(() => []),
+                Utils.get('/api/Orders').catch(() => []),
+                Utils.get('/api/AppUser').catch(() => []),
+                Utils.get('/api/Payments').catch(() => [])
+            ]);
+            const totalRevenue = (orders || []).reduce((sum, o) => sum + (o.total || 0), 0) +
+                                  (payments || []).reduce((sum, p) => sum + (p.amount || 0), 0);
+            const stats = {
+                totalTickets: (orders || []).reduce((sum, o) => sum + (o.ticketsCount || 0), 0),
+                totalUsers: (users || []).length,
+                totalOrders: (orders || []).length,
+                totalRevenue
+            };
             this.stats = stats || {};
             this.displayStats();
         } catch (error) {
@@ -137,7 +160,7 @@ class Admin {
 
     async loadMatches() {
         try {
-            const matches = await Utils.get('/admin/matches');
+            const matches = await Utils.get('/api/Matches');
             this.matches = matches || [];
             this.renderMatches();
         } catch (error) {
@@ -189,7 +212,7 @@ class Admin {
 
     async loadProducts() {
         try {
-            const products = await Utils.get('/admin/products');
+            const products = await Utils.get('/api/Merchandise');
             this.products = products || [];
             this.renderProducts();
         } catch (error) {
@@ -241,7 +264,7 @@ class Admin {
 
     async loadUsers() {
         try {
-            const users = await Utils.get('/admin/users');
+            const users = await Utils.get('/api/AppUser');
             this.users = users || [];
             this.renderUsers();
         } catch (error) {
@@ -277,23 +300,121 @@ class Admin {
                 <p>Role: ${user.role} - Joined: ${Utils.formatDate(user.createdAt)}</p>
             </div>
             <div class="admin-item-actions">
-                <button class="btn btn-small btn-primary" onclick="window.admin.editUser('${user.id}')">
-                    <i class="fas fa-edit"></i> Edit
-                </button>
-                <button class="btn btn-small btn-secondary" onclick="window.admin.viewUserDetails('${user.id}')">
-                    <i class="fas fa-eye"></i> View
-                </button>
-                <button class="btn btn-small btn-danger" onclick="window.admin.deleteUser('${user.id}')">
-                    <i class="fas fa-trash"></i> Delete
-                </button>
+                <button class="btn btn-small btn-primary" onclick="window.admin.editUser('${user.id}')"><i class="fas fa-edit"></i> Edit</button>
+                <button class="btn btn-small btn-secondary" onclick="window.admin.viewUserDetails('${user.id}')"><i class="fas fa-eye"></i> View</button>
+                <button class="btn btn-small btn-warning" onclick="window.admin.addUserPoints('${user.id}')"><i class="fas fa-plus-circle"></i> Points</button>
+                <button class="btn btn-small btn-info" onclick="window.admin.changeUserTier('${user.id}')"><i class="fas fa-layer-group"></i> Tier</button>
+                <button class="btn btn-small btn-secondary" onclick="window.admin.viewUserCards('${user.id}')"><i class="fas fa-credit-card"></i> Cards</button>
+                <button class="btn btn-small btn-danger" onclick="window.admin.deleteUser('${user.id}')"><i class="fas fa-trash"></i> Delete</button>
             </div>
         `;
         return item;
     }
 
+    async viewUserDetails(userId) {
+        try {
+            const user = await Utils.get(`/api/AppUser/${userId}`);
+            const loyalty = await Utils.get(`/api/AppUser/${userId}/loyalty`).catch(() => null);
+            const info = [
+                `Name: ${user.firstName} ${user.lastName}`,
+                `Email: ${user.email}`,
+                `Phone: ${user.phone || ''}`,
+                `Role: ${user.role}`,
+                loyalty ? `Tier: ${loyalty.tier} • Points: ${loyalty.points}` : null
+            ].filter(Boolean).join('\n');
+            alert(info);
+        } catch (e) {
+            Utils.showNotification('Failed to load user details', 'error');
+        }
+    }
+
+    async editUser(userId) {
+        try {
+            const user = await Utils.get(`/api/AppUser/${userId}`);
+            const firstName = prompt('First name', user.firstName);
+            if (firstName === null) return;
+            const lastName = prompt('Last name', user.lastName);
+            if (lastName === null) return;
+            const email = prompt('Email', user.email);
+            if (email === null) return;
+            const role = prompt('Role (User/Admin)', user.role);
+            if (role === null) return;
+            await Utils.put(`/api/AppUser/${userId}`, { ...user, firstName, lastName, email, role });
+            Utils.showNotification('User updated', 'success');
+            this.loadUsers();
+        } catch (e) {
+            Utils.showNotification('Failed to update user', 'error');
+        }
+    }
+
+    async deleteUser(userId) {
+        if (!confirm('Delete this user?')) return;
+        try {
+            await Utils.delete(`/api/AppUser/${userId}`);
+            Utils.showNotification('User deleted', 'success');
+            this.loadUsers();
+        } catch (e) {
+            Utils.showNotification('Failed to delete user', 'error');
+        }
+    }
+
+    async addUserPoints(userId) {
+        const amountStr = prompt('Add points amount', '10');
+        if (amountStr === null) return;
+        const amount = parseInt(amountStr, 10);
+        if (Number.isNaN(amount) || amount <= 0) {
+            Utils.showNotification('Invalid points amount', 'error');
+            return;
+        }
+        try {
+            await Utils.post(`/api/AppUser/${userId}/add-points`, { points: amount });
+            Utils.showNotification('Points added', 'success');
+        } catch (e) {
+            Utils.showNotification('Failed to add points', 'error');
+        }
+    }
+
+    async changeUserTier(userId) {
+        const tier = prompt('Set tier (e.g., Bronze/Silver/Gold/Platinum)');
+        if (tier === null || tier.trim() === '') return;
+        try {
+            await Utils.put(`/api/AppUser/${userId}/tier`, { tier });
+            Utils.showNotification('Tier updated', 'success');
+        } catch (e) {
+            Utils.showNotification('Failed to update tier', 'error');
+        }
+    }
+
+    async viewUserCards(userId) {
+        try {
+            const cards = await Utils.get(`/api/AppUser/${userId}/cards`);
+            if (!cards || cards.length === 0) {
+                alert('No cards on file.');
+                return;
+            }
+            const lines = cards.map(c => `ID: ${c.id} • **** **** **** ${c.last4} • ${c.brand || ''}`);
+            const choice = prompt(`Cards for user ${userId}:\n${lines.join('\n')}\nEnter card ID to delete, or leave blank.`);
+            if (choice && choice.trim()) {
+                await this.deleteUserCard(userId, choice.trim());
+            }
+        } catch (e) {
+            Utils.showNotification('Failed to load user cards', 'error');
+        }
+    }
+
+    async deleteUserCard(userId, cardId) {
+        if (!confirm('Delete this card?')) return;
+        try {
+            await Utils.delete(`/api/AppUser/${userId}/cards/${cardId}`);
+            Utils.showNotification('Card deleted', 'success');
+        } catch (e) {
+            Utils.showNotification('Failed to delete card', 'error');
+        }
+    }
+
     async loadOrders() {
         try {
-            const orders = await Utils.get('/admin/orders');
+            const orders = await Utils.get('/api/Orders');
             this.orders = orders || [];
             this.renderOrders();
         } catch (error) {
@@ -371,17 +492,24 @@ class Admin {
 
         try {
             Utils.showLoading(submitBtn);
-
-            const response = await Utils.post('/admin/matches', formData);
-
-            if (response && response.success) {
-                Utils.showNotification('Match added successfully!', 'success');
-                Utils.hideModal('addMatchModal');
-                form.reset();
-                this.loadMatches();
+            let response;
+            if (form.dataset.editId) {
+                response = await Utils.put(`/api/Matches/${form.dataset.editId}`, {
+                    ...formData,
+                    matchDate: `${formData.matchDate}T${formData.matchTime}:00`
+                });
             } else {
-                Utils.showNotification('Failed to add match', 'error');
+                response = await Utils.post('/api/Matches', {
+                    ...formData,
+                    matchDate: `${formData.matchDate}T${formData.matchTime}:00`
+                });
             }
+            Utils.showNotification('Match saved successfully!', 'success');
+            Utils.hideModal('addMatchModal');
+            form.removeAttribute('data-edit-id');
+            form.querySelector('button[type="submit"]').textContent = 'Add Match';
+            form.reset();
+            this.loadMatches();
         } catch (error) {
             console.error('Error adding match:', error);
             Utils.showNotification('Failed to add match', 'error');
@@ -411,17 +539,18 @@ class Admin {
 
         try {
             Utils.showLoading(submitBtn);
-
-            const response = await Utils.post('/admin/products', formData);
-
-            if (response && response.success) {
-                Utils.showNotification('Product added successfully!', 'success');
-                Utils.hideModal('addProductModal');
-                form.reset();
-                this.loadProducts();
+            let response;
+            if (form.dataset.editId) {
+                response = await Utils.put(`/api/Merchandise/${form.dataset.editId}`, formData);
             } else {
-                Utils.showNotification('Failed to add product', 'error');
+                response = await Utils.post('/api/Merchandise', formData);
             }
+            Utils.showNotification('Product saved successfully!', 'success');
+            Utils.hideModal('addProductModal');
+            form.removeAttribute('data-edit-id');
+            form.querySelector('button[type="submit"]').textContent = 'Add Product';
+            form.reset();
+            this.loadProducts();
         } catch (error) {
             console.error('Error adding product:', error);
             Utils.showNotification('Failed to add product', 'error');
@@ -432,7 +561,7 @@ class Admin {
 
     async editMatch(matchId) {
         try {
-            const match = await Utils.get(`/admin/matches/${matchId}`);
+            const match = await Utils.get(`/api/Matches/${matchId}`);
             if (match) {
                 // Populate form with match data
                 document.getElementById('homeTeam').value = match.homeTeam;
@@ -458,7 +587,7 @@ class Admin {
 
     async editProduct(productId) {
         try {
-            const product = await Utils.get(`/admin/products/${productId}`);
+            const product = await Utils.get(`/api/Merchandise/${productId}`);
             if (product) {
                 // Populate form with product data
                 document.getElementById('productName').value = product.name;
@@ -484,14 +613,9 @@ class Admin {
     async deleteMatch(matchId) {
         if (confirm('Are you sure you want to delete this match?')) {
             try {
-                const response = await Utils.delete(`/admin/matches/${matchId}`);
-                
-                if (response && response.success) {
-                    Utils.showNotification('Match deleted successfully!', 'success');
-                    this.loadMatches();
-                } else {
-                    Utils.showNotification('Failed to delete match', 'error');
-                }
+                await Utils.delete(`/api/Matches/${matchId}`);
+                Utils.showNotification('Match deleted successfully!', 'success');
+                this.loadMatches();
             } catch (error) {
                 console.error('Error deleting match:', error);
                 Utils.showNotification('Failed to delete match', 'error');
@@ -502,14 +626,9 @@ class Admin {
     async deleteProduct(productId) {
         if (confirm('Are you sure you want to delete this product?')) {
             try {
-                const response = await Utils.delete(`/admin/products/${productId}`);
-                
-                if (response && response.success) {
-                    Utils.showNotification('Product deleted successfully!', 'success');
-                    this.loadProducts();
-                } else {
-                    Utils.showNotification('Failed to delete product', 'error');
-                }
+                await Utils.delete(`/api/Merchandise/${productId}`);
+                Utils.showNotification('Product deleted successfully!', 'success');
+                this.loadProducts();
             } catch (error) {
                 console.error('Error deleting product:', error);
                 Utils.showNotification('Failed to delete product', 'error');
@@ -572,6 +691,9 @@ class Admin {
     // Load data for specific tabs
     loadTabData(tabName) {
         switch (tabName) {
+            case 'dashboard':
+                this.loadDashboard();
+                break;
             case 'matches':
                 this.loadMatches();
                 break;
@@ -584,7 +706,107 @@ class Admin {
             case 'orders':
                 this.loadOrders();
                 break;
+            case 'tickets':
+                this.loadTickets();
+                break;
+            case 'stadiums':
+                this.loadStadiums();
+                break;
+            case 'sectors':
+                this.loadSectors();
+                break;
+            case 'seats':
+                this.loadSeats();
+                break;
+            case 'payments':
+                this.loadPayments();
+                break;
+            case 'cards':
+                this.loadCards();
+                break;
         }
+    }
+
+    // Dashboard loaders
+    async loadDashboard() {
+        try {
+            const [matches, orders, payments] = await Promise.all([
+                Utils.get('/api/Matches').catch(() => []),
+                Utils.get('/api/Orders').catch(() => []),
+                Utils.get('/api/Payments').catch(() => [])
+            ]);
+            const now = new Date();
+            const upcoming = (matches || []).filter(m => new Date(m.matchDate) > now).slice(0, 5);
+            const recentOrders = (orders || []).slice(0, 5);
+            const recentPayments = (payments || []).slice(0, 5);
+            this.renderSimpleList('upcomingMatchesList', upcoming, (m) => `${m.homeTeam} vs ${m.awayTeam} • ${Utils.formatDateTime(m.matchDate)}`);
+            this.renderSimpleList('recentOrdersList', recentOrders, (o) => `#${o.id} • ${Utils.formatCurrency(o.total)} • ${o.status}`);
+            this.renderSimpleList('recentPaymentsList', recentPayments, (p) => `#${p.id} • ${Utils.formatCurrency(p.amount)} • ${Utils.formatDateTime(p.date || p.createdAt)}`);
+        } catch (e) {
+            console.error('Failed to load dashboard', e);
+        }
+    }
+
+    renderSimpleList(containerId, items, mapFn) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = '';
+        if (!items || items.length === 0) {
+            container.innerHTML = '<p class="no-items">No data found.</p>';
+            return;
+        }
+        items.forEach(i => {
+            const el = document.createElement('div');
+            el.className = 'admin-item';
+            el.innerHTML = `<div class="item-info"><p>${mapFn(i)}</p></div>`;
+            container.appendChild(el);
+        });
+    }
+
+    // Tickets
+    async loadTickets() {
+        try {
+            const tickets = await Utils.get('/api/Tickets');
+            this.renderSimpleList('ticketsList', tickets || [], (t) => `#${t.id} • ${t.match?.homeTeam || ''} vs ${t.match?.awayTeam || ''} • ${t.status || 'issued'}`);
+        } catch (e) {
+            Utils.showNotification('Failed to load tickets', 'error');
+        }
+    }
+
+    // Stadiums/Sectors/Seats
+    async loadStadiums() {
+        try {
+            const stadiums = await Utils.get('/api/Stadiums');
+            this.renderSimpleList('stadiumsList', stadiums || [], (s) => `${s.name} • Capacity: ${s.capacity}`);
+        } catch (e) { Utils.showNotification('Failed to load stadiums', 'error'); }
+    }
+    async loadSectors() {
+        try {
+            const sectors = await Utils.get('/api/Sectors');
+            this.renderSimpleList('sectorsList', sectors || [], (s) => `${s.name} • Stadium: ${s.stadiumName || s.stadiumId}`);
+        } catch (e) { Utils.showNotification('Failed to load sectors', 'error'); }
+    }
+    async loadSeats() {
+        try {
+            const seats = await Utils.get('/api/Seat');
+            this.renderSimpleList('seatsList', seats || [], (s) => `Row ${s.row}, Seat ${s.number} • Sector: ${s.sectorName || s.sectorId}`);
+        } catch (e) { Utils.showNotification('Failed to load seats', 'error'); }
+    }
+
+    // Payments
+    async loadPayments() {
+        try {
+            const payments = await Utils.get('/api/Payments');
+            this.renderSimpleList('paymentsList', payments || [], (p) => `#${p.id} • ${Utils.formatCurrency(p.amount)} • ${p.method || ''}`);
+        } catch (e) { Utils.showNotification('Failed to load payments', 'error'); }
+    }
+
+    // Cards
+    async loadCards() {
+        try {
+            const cards = await Utils.get('/api/CardDetails');
+            this.renderSimpleList('cardsList', cards || [], (c) => `**** **** **** ${String(c.last4 || '').padStart(4, '•')}`);
+        } catch (e) { Utils.showNotification('Failed to load cards', 'error'); }
     }
 }
 

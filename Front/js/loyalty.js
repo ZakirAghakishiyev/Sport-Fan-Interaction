@@ -23,7 +23,7 @@ class Loyalty {
 
     async loadLoyaltyData() {
         try {
-            const loyaltyData = await Utils.get('/loyalty/profile');
+            const loyaltyData = await Utils.get('/api/loyalty/profile');
             this.loyaltyData = loyaltyData || this.getDefaultLoyaltyData();
             this.displayLoyaltyStatus();
         } catch (error) {
@@ -118,7 +118,7 @@ class Loyalty {
 
     async loadRewards() {
         try {
-            const rewards = await Utils.get('/loyalty/rewards');
+            const rewards = await Utils.get('/api/loyalty/rewards');
             this.rewards = rewards || DEMO_REWARDS;
             this.displayRecentRewards();
         } catch (error) {
@@ -246,7 +246,7 @@ class Loyalty {
 
     async earnPoints(amount, reason) {
         try {
-            const response = await Utils.post('/loyalty/earn-points', {
+            const response = await Utils.post('/api/loyalty/earn-points', {
                 points: amount,
                 reason: reason
             });
@@ -268,7 +268,7 @@ class Loyalty {
 
     async redeemReward(rewardId) {
         try {
-            const response = await Utils.post(`/loyalty/redeem/${rewardId}`);
+            const response = await Utils.post(`/api/loyalty/redeem/${rewardId}`);
             
             if (response && response.success) {
                 // Update rewards list
@@ -350,7 +350,7 @@ class Loyalty {
     // Get available rewards for purchase
     async getAvailableRewards() {
         try {
-            const rewards = await Utils.get('/loyalty/available-rewards');
+            const rewards = await Utils.get('/api/loyalty/available-rewards');
             return rewards || [];
         } catch (error) {
             console.error('Error loading available rewards:', error);

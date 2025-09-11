@@ -79,15 +79,45 @@
             <!-- Admin Navigation -->
             <section class="admin-nav">
                 <div class="nav-tabs">
-                    <button class="nav-tab active" data-tab="matches">Matches</button>
-                    <button class="nav-tab" data-tab="merchandise">Merchandise</button>
+                    <button class="nav-tab active" data-tab="dashboard">Dashboard</button>
                     <button class="nav-tab" data-tab="users">Users</button>
+                    <button class="nav-tab" data-tab="matches">Matches</button>
+                    <button class="nav-tab" data-tab="stadiums">Stadiums</button>
+                    <button class="nav-tab" data-tab="sectors">Sectors</button>
+                    <button class="nav-tab" data-tab="seats">Seats</button>
+                    <button class="nav-tab" data-tab="tickets">Tickets</button>
+                    <button class="nav-tab" data-tab="merchandise">Merchandise</button>
                     <button class="nav-tab" data-tab="orders">Orders</button>
+                    <button class="nav-tab" data-tab="payments">Payments</button>
+                    <button class="nav-tab" data-tab="cards">Cards</button>
+                </div>
+            </section>
+
+            <!-- Dashboard -->
+            <section class="admin-content" id="dashboardTab" data-tab="dashboard">
+                <div class="content-header">
+                    <h2>Overview</h2>
+                </div>
+                <div class="content-body">
+                    <div class="grid-3">
+                        <div>
+                            <h3 class="section-title">Upcoming Matches</h3>
+                            <div id="upcomingMatchesList" class="admin-list"></div>
+                        </div>
+                        <div>
+                            <h3 class="section-title">Recent Orders</h3>
+                            <div id="recentOrdersList" class="admin-list"></div>
+                        </div>
+                        <div>
+                            <h3 class="section-title">Latest Payments</h3>
+                            <div id="recentPaymentsList" class="admin-list"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Matches Management -->
-            <section class="admin-content" id="matchesTab">
+            <section class="admin-content" id="matchesTab" data-tab="matches" style="display: none;">
                 <div class="content-header">
                     <h2>Match Management</h2>
                     <button class="btn btn-primary" id="addMatchBtn">
@@ -102,7 +132,7 @@
             </section>
 
             <!-- Merchandise Management -->
-            <section class="admin-content" id="merchandiseTab" style="display: none;">
+            <section class="admin-content" id="merchandiseTab" data-tab="merchandise" style="display: none;">
                 <div class="content-header">
                     <h2>Merchandise Management</h2>
                     <button class="btn btn-primary" id="addProductBtn">
@@ -117,7 +147,7 @@
             </section>
 
             <!-- Users Management -->
-            <section class="admin-content" id="usersTab" style="display: none;">
+            <section class="admin-content" id="usersTab" data-tab="users" style="display: none;">
                 <div class="content-header">
                     <h2>User Management</h2>
                     <div class="search-box">
@@ -133,7 +163,7 @@
             </section>
 
             <!-- Orders Management -->
-            <section class="admin-content" id="ordersTab" style="display: none;">
+            <section class="admin-content" id="ordersTab" data-tab="orders" style="display: none;">
                 <div class="content-header">
                     <h2>Order Management</h2>
                     <div class="filter-group">
@@ -150,6 +180,72 @@
                     <div id="ordersList" class="admin-list">
                         <!-- Orders will be loaded here -->
                     </div>
+                </div>
+            </section>
+
+            <!-- Stadiums Management -->
+            <section class="admin-content" id="stadiumsTab" data-tab="stadiums" style="display: none;">
+                <div class="content-header">
+                    <h2>Stadiums</h2>
+                    <button class="btn btn-primary" id="addStadiumBtn"><i class="fas fa-plus"></i> Add Stadium</button>
+                </div>
+                <div class="content-body">
+                    <div id="stadiumsList" class="admin-list"></div>
+                </div>
+            </section>
+
+            <!-- Sectors Management -->
+            <section class="admin-content" id="sectorsTab" data-tab="sectors" style="display: none;">
+                <div class="content-header">
+                    <h2>Sectors</h2>
+                    <button class="btn btn-primary" id="addSectorBtn"><i class="fas fa-plus"></i> Add Sector</button>
+                </div>
+                <div class="content-body">
+                    <div id="sectorsList" class="admin-list"></div>
+                </div>
+            </section>
+
+            <!-- Seats Management -->
+            <section class="admin-content" id="seatsTab" data-tab="seats" style="display: none;">
+                <div class="content-header">
+                    <h2>Seats</h2>
+                    <button class="btn btn-primary" id="addSeatBtn"><i class="fas fa-plus"></i> Add Seat</button>
+                </div>
+                <div class="content-body">
+                    <div id="seatsList" class="admin-list"></div>
+                </div>
+            </section>
+
+            <!-- Tickets Management -->
+            <section class="admin-content" id="ticketsTab" data-tab="tickets" style="display: none;">
+                <div class="content-header">
+                    <h2>Tickets</h2>
+                    <button class="btn btn-primary" id="addTicketBtn"><i class="fas fa-plus"></i> Issue Ticket</button>
+                </div>
+                <div class="content-body">
+                    <div id="ticketsList" class="admin-list"></div>
+                </div>
+            </section>
+
+            <!-- Payments Management -->
+            <section class="admin-content" id="paymentsTab" data-tab="payments" style="display: none;">
+                <div class="content-header">
+                    <h2>Payments</h2>
+                    <button class="btn btn-primary" id="addPaymentBtn"><i class="fas fa-plus"></i> Record Payment</button>
+                </div>
+                <div class="content-body">
+                    <div id="paymentsList" class="admin-list"></div>
+                </div>
+            </section>
+
+            <!-- Cards Management -->
+            <section class="admin-content" id="cardsTab" data-tab="cards" style="display: none;">
+                <div class="content-header">
+                    <h2>Card Details</h2>
+                    <button class="btn btn-primary" id="addCardBtn"><i class="fas fa-plus"></i> Add Card</button>
+                </div>
+                <div class="content-body">
+                    <div id="cardsList" class="admin-list"></div>
                 </div>
             </section>
         </div>

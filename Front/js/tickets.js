@@ -116,7 +116,7 @@ class Tickets {
             return;
         }
         try {
-            const tickets = await Utils.get('/tickets');
+            const tickets = await Utils.get('/api/tickets');
             this.tickets = tickets || DEMO_TICKETS;
             this.renderRecentTickets();
         } catch (error) {
@@ -201,7 +201,7 @@ class Tickets {
 
     async viewTicket(ticketId) {
         try {
-            const ticket = await Utils.get(`/tickets/${ticketId}`);
+            const ticket = await Utils.get(`/api/tickets/${ticketId}`);
             if (ticket) {
                 this.showTicketModal(ticket);
             }
@@ -273,7 +273,7 @@ class Tickets {
 
     async downloadTicket(ticketId) {
         try {
-            const response = await Utils.get(`/tickets/${ticketId}/download`);
+            const response = await Utils.get(`/api/tickets/${ticketId}/download`);
             
             if (response && response.downloadUrl) {
                 // Create a temporary link to download the ticket
@@ -296,7 +296,7 @@ class Tickets {
 
     async cancelTicket(ticketId) {
         try {
-            const response = await Utils.put(`/tickets/${ticketId}/cancel`);
+            const response = await Utils.put(`/api/tickets/${ticketId}/cancel`);
             
             if (response && response.success) {
                 // Update local tickets list

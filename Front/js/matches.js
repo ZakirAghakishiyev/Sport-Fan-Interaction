@@ -110,7 +110,7 @@ class Matches {
             return;
         }
         try {
-            const matches = await Utils.get('/matches');
+            const matches = await Utils.get('/api/matches');
             this.matches = matches || [];
             this.renderMatches();
         } catch (error) {
@@ -268,7 +268,7 @@ class Matches {
             return;
         }
         try {
-            const match = await Utils.get(`/matches/${matchId}`);
+            const match = await Utils.get(`/api/matches/${matchId}`);
             if (match) {
                 this.currentMatch = match;
                 this.displayMatchDetails(match);
@@ -308,7 +308,7 @@ class Matches {
             return;
         }
         try {
-            const prices = await Utils.get(`/matches/${matchId}/sector-prices`);
+            const prices = await Utils.get(`/api/matches/${matchId}/sector-prices`);
             this.sectorPrices = prices || {};
         } catch (error) {
             this.sectorPrices = DEMO_SECTOR_PRICES;
@@ -403,7 +403,7 @@ class Matches {
                 userId: Utils.getUserData().id
             };
 
-            const response = await Utils.post('/tickets', bookingData);
+            const response = await Utils.post('/api/tickets', bookingData);
 
             if (response && response.success) {
                 this.showBookingConfirmation(response.ticket);

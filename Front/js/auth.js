@@ -7,6 +7,8 @@ class Auth {
     initializeAuth() {
         this.setupLoginForm();
         this.setupRegisterForm();
+        this.setupForgotPasswordForm();
+        this.setupResetPasswordForm();
         this.setupLogout();
         this.updateNavigation();
     }
@@ -17,6 +19,26 @@ class Auth {
             loginForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 await this.handleLogin();
+            });
+        }
+    }
+
+    setupForgotPasswordForm() {
+        const forgotForm = document.getElementById('forgotPasswordForm');
+        if (forgotForm) {
+            forgotForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                await this.handleForgotPassword();
+            });
+        }
+    }
+
+    setupResetPasswordForm() {
+        const resetForm = document.getElementById('resetPasswordForm');
+        if (resetForm) {
+            resetForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                await this.handleResetPassword();
             });
         }
     }
@@ -69,7 +91,7 @@ class Auth {
                 return;
             }
 
-            const response = await Utils.post('/auth/login', { email, password });
+            const response = await Utils.post('/api/auth/login', { email, password });
             if (response && response.token) {
                 Utils.setToken(response.token);
                 Utils.setUserData(response.user);
@@ -131,7 +153,7 @@ class Auth {
                 return;
             }
 
-            const response = await Utils.post('/auth/register', {
+            const response = await Utils.post('/api/auth/register', {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 email: formData.email,
@@ -148,6 +170,73 @@ class Auth {
         } catch (error) {
             console.error('Registration error:', error);
             Utils.showNotification('Registration failed. Please try again.', 'error');
+        } finally {
+            if (submitBtn) Utils.hideLoading(submitBtn);
+        }
+    }
+
+    async handleForgotPassword() {
+        const form = document.getElementById('forgotPasswordForm');
+        const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+        const email = document.getElementById('email') ? document.getElementById('email').value : '';
+
+        if (!Utils.validateEmail(email)) {
+            Utils.showNotification('Please enter a valid email address', 'error');
+            return;
+        }
+
+        try {
+            if (submitBtn) Utils.showLoading(submitBtn);
+
+            if (typeof AUTH_DISABLED !== 'undefined' && AUTH_DISABLED) {
+                Utils.showNotification('Reset link sent (demo mode). Check your email.', 'success');
+                setTimeout(() => { window.location.href = 'reset-password.html?token=dummy'; }, 800);
+                return;
+            }
+
+            await Utils.post('/api/auth/forgot-password', { email });
+            Utils.showNotification('If the email exists, a reset link was sent.', 'success');
+        } catch (error) {
+            console.error('Forgot password error:', error);
+            Utils.showNotification('Failed to request reset. Please try again.', 'error');
+        } finally {
+            if (submitBtn) Utils.hideLoading(submitBtn);
+        }
+    }
+
+    async handleResetPassword() {
+        const form = document.getElementById('resetPasswordForm');
+        const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+        const token = document.getElementById('token') ? document.getElementById('token').value.trim() : '';
+        const password = document.getElementById('password') ? document.getElementById('password').value : '';
+        const confirmPassword = document.getElementById('confirmPassword') ? document.getElementById('confirmPassword').value : '';
+
+        if (!token) {
+            Utils.showNotification('Reset token is required', 'error');
+            return;
+        }
+        if (!Utils.validatePassword(password)) {
+            Utils.showNotification('Password must be at least 6 characters long', 'error');
+            return;
+        }
+        if (password !== confirmPassword) {
+            Utils.showNotification('Passwords do not match', 'error');
+            return;
+        }
+
+        try {
+            if (submitBtn) Utils.showLoading(submitBtn);
+            if (typeof AUTH_DISABLED !== 'undefined' && AUTH_DISABLED) {
+                Utils.showNotification('Password reset successful (demo mode). Please login.', 'success');
+                setTimeout(() => { window.location.href = 'login.html'; }, 800);
+                return;
+            }
+            await Utils.post('/api/auth/reset-password', { token, password });
+            Utils.showNotification('Password reset successful. Please login.', 'success');
+            setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+        } catch (error) {
+            console.error('Reset password error:', error);
+            Utils.showNotification('Reset failed. The token may be invalid or expired.', 'error');
         } finally {
             if (submitBtn) Utils.hideLoading(submitBtn);
         }
@@ -225,7 +314,7 @@ class Auth {
     }
     async refreshUserData() {
         try {
-            const userData = await Utils.get('/auth/profile');
+            const userData = await Utils.get('/api/auth/profile');
             if (userData) {
                 Utils.setUserData(userData);
                 this.updateNavigation();
