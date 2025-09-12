@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using TicketSelling.Application.Dtos.User;
 using TicketSelling.Core.Entities;
+using TicketSelling.Infrastructure.Email;
 
 namespace TicketSelling.Web.Controllers
 {
@@ -17,7 +17,7 @@ namespace TicketSelling.Web.Controllers
     [ApiController]
     public class AppUserController(UserManager<AppUser> _userManager, 
                 SignInManager<AppUser> _signInManager, IMapper _mapper,
-                IConfiguration _configuration) : ControllerBase
+                IConfiguration _configuration, IEmailSender _emailSender) : ControllerBase
     {
 
         [HttpPost("register")]
@@ -55,15 +55,14 @@ namespace TicketSelling.Web.Controllers
             if (!result.Succeeded)
                 return Unauthorized("Invalid username or password.");
 
-            // Create JWT token
             var authClaims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
+    {
+        new Claim(ClaimTypes.Name, user.UserName),
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
 
-            // You can add role claims if needed
+            // Add role claims
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
             {
@@ -84,9 +83,11 @@ namespace TicketSelling.Web.Controllers
             return Ok(new
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token),
-                expiration = token.ValidTo
+                expiration = token.ValidTo,
+                roles 
             });
         }
+
         [Authorize]
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
@@ -117,16 +118,18 @@ namespace TicketSelling.Web.Controllers
             if (user == null)
                 return NotFound("User not found.");
 
-            // Generate reset token
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-            // Normally you would EMAIL this token to the user.
-            // For testing, we return it directly in response.
-            return Ok(new
-            {
-                message = "Password reset token generated. (Send this via email in production!)",
-                resetToken = token
-            });
+            // Encode token for URL safety
+            var encodedToken = System.Web.HttpUtility.UrlEncode(token);
+
+            // Build reset link (frontend will consume this)
+            var resetLink = $"https://your-frontend.com/reset-password?email={user.Email}&token={encodedToken}";
+
+            await _emailSender.SendAsync(user.Email, "Password Reset", $"Click here to reset: {resetLink}");
+
+
+            return Ok(new { message = "Password reset link sent to your email." });
         }
 
         [HttpPost("reset-password")]
@@ -136,13 +139,17 @@ namespace TicketSelling.Web.Controllers
             if (user == null)
                 return NotFound("User not found.");
 
-            var result = await _userManager.ResetPasswordAsync(user, dto.Token, dto.NewPassword);
+            // Decode token (reverse of UrlEncode)
+            var decodedToken = System.Web.HttpUtility.UrlDecode(dto.Token);
+
+            var result = await _userManager.ResetPasswordAsync(user, decodedToken, dto.NewPassword);
 
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
 
             return Ok(new { message = "Password reset successfully." });
         }
+
 
         [HttpGet]
         public IActionResult GetAllUsers()
@@ -300,17 +307,48 @@ namespace TicketSelling.Web.Controllers
         }
 
         // ---------------------------
-        // 5. USER ORDERS / TICKETS
+        // 5. USER ORDERS / TICKETS / REWARDS
         // ---------------------------
 
-        //[HttpGet("{id}/orders")]
-        //public async Task<IActionResult> GetUserOrders(int id) { ... }
+        [HttpGet("{id}/orders")]
+        public async Task<IActionResult> GetUserOrders(int id)
+        {
+            var user = await _userManager.Users
+                .Include(u => u.MerchandiseOrders)
+                .FirstOrDefaultAsync(u => u.Id == id);
 
-        //[HttpGet("{id}/tickets")]
-        //public async Task<IActionResult> GetUserTickets(int id) { ... }
+            if (user == null)
+                return NotFound("User not found.");
 
-        //[HttpGet("{id}/rewards")]
-        //public async Task<IActionResult> GetUserRewards(int id) { ... }
+            return Ok(user.MerchandiseOrders);
+        }
+
+        [HttpGet("{id}/tickets")]
+        public async Task<IActionResult> GetUserTickets(int id)
+        {
+            var user = await _userManager.Users
+                .Include(u => u.Tickets) 
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user == null)
+                return NotFound("User not found.");
+
+            return Ok(user.Tickets);
+        }
+
+        [HttpGet("{id}/rewards")]
+        public async Task<IActionResult> GetUserRewards(int id)
+        {
+            var user = await _userManager.Users
+                .Include(u => u.GiftRewards) 
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user == null)
+                return NotFound("User not found.");
+
+            return Ok(user.GiftRewards);
+        }
+
     }
 
 }

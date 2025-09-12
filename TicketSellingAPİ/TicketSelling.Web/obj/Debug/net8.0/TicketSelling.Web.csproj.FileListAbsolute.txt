@@ -57,7 +57,6 @@ E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Syste
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.Composition.TypedParts.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.Formats.Asn1.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.Memory.Data.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
@@ -146,12 +145,6 @@ E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\scope
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets.build.json
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets.development.json
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets\msbuild.TicketSelling.Web.Microsoft.AspNetCore.StaticWebAssets.props
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets\msbuild.TicketSelling.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets\msbuild.build.TicketSelling.Web.props
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TicketSelling.Web.props
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TicketSelling.Web.props
-E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets.pack.json
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\TicketSe.93A4F5C7.Up2Date
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\TicketSelling.Web.dll
@@ -162,3 +155,8 @@ E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\ref\T
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
 E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\bin\Debug\net8.0\Elastic.Transport.dll
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+E:\CodeAcademyProject\TicketSellingAPİ\TicketSelling.Web\obj\Debug\net8.0\staticwebassets.build.json.cache

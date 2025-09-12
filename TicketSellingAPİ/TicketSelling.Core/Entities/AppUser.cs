@@ -10,5 +10,6 @@ public class AppUser : IdentityUser<int>
     public List<Ticket> Tickets { get; set; } = [];
     public List<Order> MerchandiseOrders { get; set; } = [];
     public List<UserSavedCard> UserSavedCards { get; set; } = [];
+    public List<GiftReward> GiftRewards { get; set; } = [];
 
 }

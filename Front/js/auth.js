@@ -66,35 +66,46 @@ class Auth {
     async handleLogin() {
         const form = document.getElementById('loginForm');
         const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
-        const email = document.getElementById('email') ? document.getElementById('email').value : '';
+        const userName = document.getElementById('email') ? document.getElementById('email').value : ''; // Using email field for userName
         const password = document.getElementById('password') ? document.getElementById('password').value : '';
-
-        // Validation (keep basic UX)
-        if (!Utils.validateEmail(email)) {
-            Utils.showNotification('Please enter a valid email address', 'error');
+        const rememberMe = document.getElementById('rememberMe') ? document.getElementById('rememberMe').checked : false;
+    
+        // Validation
+        if (!userName.trim()) {
+            Utils.showNotification('Please enter your username', 'error');
             return;
         }
         if (!Utils.validatePassword(password)) {
             Utils.showNotification('Password must be at least 6 characters long', 'error');
             return;
         }
-
+    
         try {
             if (submitBtn) Utils.showLoading(submitBtn);
-
-            if (typeof AUTH_DISABLED !== 'undefined' && AUTH_DISABLED) {
-                // Simulate login success
-                Utils.setToken('demo_token');
-                Utils.setUserData({ firstName: 'Demo', lastName: 'User', role: 'User', email });
-                Utils.showNotification('Login successful (demo mode)', 'success');
-                setTimeout(() => { window.location.href = 'dashboard.html'; }, 600);
-                return;
-            }
-
-            const response = await Utils.post('/api/auth/login', { email, password });
+    
+            // Always send login request
+            const response = await Utils.post('/api/AppUser/login', { 
+                userName, 
+                password, 
+                rememberMe 
+            });
+    
             if (response && response.token) {
                 Utils.setToken(response.token);
-                Utils.setUserData(response.user);
+    
+                // Store user data from backend response
+                Utils.setUserData({ 
+                    userName: response.userName || userName,
+                    email: response.email || '',
+                    roles: response.roles || [],
+                    expiration: response.expiration
+                });
+    
+                // Set cookie if rememberMe is true
+                if (rememberMe) {
+                    Utils.setCookie('rememberMe', 'true', 30); // 30 days
+                }
+    
                 Utils.showNotification('Login successful!', 'success');
                 setTimeout(() => { window.location.href = 'dashboard.html'; }, 1000);
             } else {
@@ -107,24 +118,24 @@ class Auth {
             if (submitBtn) Utils.hideLoading(submitBtn);
         }
     }
+    
 
     async handleRegister() {
         const form = document.getElementById('registerForm');
         const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
 
         const formData = {
-            firstName: document.getElementById('firstName') ? document.getElementById('firstName').value : 'Demo',
-            lastName: document.getElementById('lastName') ? document.getElementById('lastName').value : 'User',
-            email: document.getElementById('email') ? document.getElementById('email').value : 'demo@example.com',
-            phone: document.getElementById('phone') ? document.getElementById('phone').value : '+0000000000',
-            password: document.getElementById('password') ? document.getElementById('password').value : '123456',
-            confirmPassword: document.getElementById('confirmPassword') ? document.getElementById('confirmPassword').value : '123456',
-            termsAccepted: document.getElementById('termsAccepted') ? document.getElementById('termsAccepted').checked : true
+            userName: document.getElementById('firstName') ? document.getElementById('firstName').value : '', // Using firstName field for userName
+            email: document.getElementById('email') ? document.getElementById('email').value : '',
+            phoneNumber: document.getElementById('phone') ? document.getElementById('phone').value : '',
+            password: document.getElementById('password') ? document.getElementById('password').value : '',
+            confirmPassword: document.getElementById('confirmPassword') ? document.getElementById('confirmPassword').value : '',
+            termsAccepted: document.getElementById('termsAccepted') ? document.getElementById('termsAccepted').checked : false
         };
 
-        // Minimal UX checks
-        if (!formData.firstName || !formData.lastName) {
-            Utils.showNotification('Please enter your full name', 'error');
+        // Validation
+        if (!formData.userName.trim()) {
+            Utils.showNotification('Please enter your username', 'error');
             return;
         }
         if (!Utils.validateEmail(formData.email)) {
@@ -153,15 +164,14 @@ class Auth {
                 return;
             }
 
-            const response = await Utils.post('/api/auth/register', {
-                firstName: formData.firstName,
-                lastName: formData.lastName,
+            const response = await Utils.post('/api/AppUser/register', {
+                userName: formData.userName,
                 email: formData.email,
-                phone: formData.phone,
+                phoneNumber: formData.phoneNumber,
                 password: formData.password
             });
 
-            if (response && response.success) {
+            if (response && response.message) {
                 Utils.showNotification('Registration successful! Please login.', 'success');
                 setTimeout(() => { window.location.href = 'login.html'; }, 1500);
             } else {
@@ -194,8 +204,12 @@ class Auth {
                 return;
             }
 
-            await Utils.post('/api/auth/forgot-password', { email });
-            Utils.showNotification('If the email exists, a reset link was sent.', 'success');
+            const response = await Utils.post('/api/AppUser/forgot-password', { email });
+            if (response && response.message) {
+                Utils.showNotification('Password reset link sent to your email.', 'success');
+            } else {
+                Utils.showNotification('If the email exists, a reset link was sent.', 'success');
+            }
         } catch (error) {
             console.error('Forgot password error:', error);
             Utils.showNotification('Failed to request reset. Please try again.', 'error');
@@ -210,9 +224,14 @@ class Auth {
         const token = document.getElementById('token') ? document.getElementById('token').value.trim() : '';
         const password = document.getElementById('password') ? document.getElementById('password').value : '';
         const confirmPassword = document.getElementById('confirmPassword') ? document.getElementById('confirmPassword').value : '';
+        const email = document.getElementById('email') ? document.getElementById('email').value : '';
 
         if (!token) {
             Utils.showNotification('Reset token is required', 'error');
+            return;
+        }
+        if (!email) {
+            Utils.showNotification('Email is required for password reset', 'error');
             return;
         }
         if (!Utils.validatePassword(password)) {
@@ -231,9 +250,18 @@ class Auth {
                 setTimeout(() => { window.location.href = 'login.html'; }, 800);
                 return;
             }
-            await Utils.post('/api/auth/reset-password', { token, password });
-            Utils.showNotification('Password reset successful. Please login.', 'success');
-            setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+            const response = await Utils.post('/api/AppUser/reset-password', { 
+                email, 
+                token, 
+                newPassword: password 
+            });
+            if (response && response.message) {
+                Utils.showNotification('Password reset successful. Please login.', 'success');
+                setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+            } else {
+                Utils.showNotification('Password reset successful. Please login.', 'success');
+                setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+            }
         } catch (error) {
             console.error('Reset password error:', error);
             Utils.showNotification('Reset failed. The token may be invalid or expired.', 'error');
@@ -242,20 +270,33 @@ class Auth {
         }
     }
 
-    logout() {
-        Utils.removeToken();
-        Utils.removeUserData();
-        Utils.showNotification('Logged out successfully', 'success');
-        setTimeout(() => { window.location.href = 'index.html'; }, 600);
+    async logout() {
+        try {
+            // Call logout endpoint if authenticated
+            if (Utils.isAuthenticated()) {
+                await Utils.post('/api/AppUser/logout');
+            }
+        } catch (error) {
+            console.error('Logout error:', error);
+            // Continue with local logout even if API call fails
+        } finally {
+            // Clear local data
+            Utils.removeToken();
+            Utils.removeUserData();
+            Utils.removeCookie('rememberMe');
+            
+            Utils.showNotification('Logged out successfully', 'success');
+            setTimeout(() => { window.location.href = 'index.html'; }, 600);
+        }
     }
 
     updateNavigation() {
-        const userData = Utils.getUserData() || { firstName: 'Guest', lastName: 'User' };
+        const userData = Utils.getUserData() || { userName: 'Guest' };
         const isAuthenticated = Utils.isAuthenticated();
 
         const userNameElements = document.querySelectorAll('#userName, #userDisplayName');
         userNameElements.forEach(element => {
-            element.textContent = `${userData.firstName} ${userData.lastName}`;
+            element.textContent = userData.userName || userData.firstName || 'Guest';
         });
 
         const loginBtn = document.getElementById('loginBtn');

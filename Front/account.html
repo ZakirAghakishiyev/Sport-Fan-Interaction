@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management - Football Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Manage your Football Club account, profile, and payment methods.">
+    <link rel="icon" href="img/image.png">
+    <meta name="theme-color" content="#0b5ed7">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-futbol"></i>
+                <span>Football Club</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="merchandise.html" class="nav-link">Shop</a></li>
+                <li class="user-menu">
+                    <a href="#" class="nav-link" id="userMenuBtn">
+                        <i class="fas fa-user"></i>
+                        <span id="userName">User</span>
+                    </a>
+                    <div class="dropdown-menu" id="userDropdown">
+                        <a href="account.html" class="active">Account</a>
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Account Header -->
+            <section class="account-header">
+                <div class="account-title">
+                    <h1>Account Management</h1>
+                    <p>Manage your profile, payment methods, and account settings</p>
+                </div>
+            </section>
+
+            <!-- Account Navigation -->
+            <section class="account-nav">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" data-tab="profile">Profile</button>
+                    <button class="nav-tab" data-tab="cards">Payment Methods</button>
+                    <button class="nav-tab" data-tab="settings">Settings</button>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section class="account-content" id="profileTab" data-tab="profile">
+                <div class="content-header">
+                    <h2>Profile Information</h2>
+                    <button class="btn btn-primary" id="editProfileBtn">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+                <div class="content-body">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="profileName">Loading...</h3>
+                            <p id="profileEmail">Loading...</p>
+                            <p id="profilePhone">Loading...</p>
+                            <p id="profileRole">Loading...</p>
+                            <p id="profileJoined">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment Methods Section -->
+            <section class="account-content" id="cardsTab" data-tab="cards" style="display: none;">
+                <div class="content-header">
+                    <h2>Payment Methods</h2>
+                    <button class="btn btn-primary" id="addCardBtn">
+                        <i class="fas fa-plus"></i> Add Card
+                    </button>
+                </div>
+                <div class="content-body">
+                    <div id="cardsList" class="cards-grid">
+                        <!-- Cards will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="account-content" id="settingsTab" data-tab="settings" style="display: none;">
+                <div class="content-header">
+                    <h2>Account Settings</h2>
+                </div>
+                <div class="content-body">
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <h3>Change Password</h3>
+                            <p>Update your account password</p>
+                            <button class="btn btn-secondary" id="changePasswordBtn">Change Password</button>
+                        </div>
+                        <div class="setting-item">
+                            <h3>Notification Preferences</h3>
+                            <p>Manage email and SMS notifications</p>
+                            <button class="btn btn-secondary" id="notificationSettingsBtn">Manage Notifications</button>
+                        </div>
+                        <div class="setting-item">
+                            <h3>Privacy Settings</h3>
+                            <p>Control your privacy and data sharing</p>
+                            <button class="btn btn-secondary" id="privacySettingsBtn">Privacy Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="editProfileForm" class="account-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editFirstName">First Name</label>
+                        <input type="text" id="editFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editLastName">Last Name</label>
+                        <input type="text" id="editLastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPhone">Phone Number</label>
+                    <input type="tel" id="editPhone" name="phone">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelEditProfileBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Card Modal -->
+    <div id="addCardModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Payment Method</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="addCardForm" class="account-form">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryMonth">Expiry Month</label>
+                        <select id="expiryMonth" name="expiryMonth" required>
+                            <option value="">Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryYear">Expiry Year</label>
+                        <select id="expiryYear" name="expiryYear" required>
+                            <option value="">Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardholderName">Cardholder Name</label>
+                    <input type="text" id="cardholderName" name="cardholderName" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="setAsDefault" name="setAsDefault">
+                        <span class="checkmark"></span>
+                        Set as default payment method
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelAddCardBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Card</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Change Password</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="changePasswordForm" class="account-form">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirm New Password</label>
+                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelChangePasswordBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

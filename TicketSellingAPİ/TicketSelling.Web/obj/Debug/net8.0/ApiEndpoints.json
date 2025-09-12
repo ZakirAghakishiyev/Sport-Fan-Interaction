@@ -138,6 +138,54 @@
   },
   {
     "ContainingType": "TicketSelling.Web.Controllers.AppUserController",
+    "Method": "GetUserOrders",
+    "RelativePath": "api/AppUser/{id}/orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.AppUserController",
+    "Method": "GetUserRewards",
+    "RelativePath": "api/AppUser/{id}/rewards",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.AppUserController",
+    "Method": "GetUserTickets",
+    "RelativePath": "api/AppUser/{id}/tickets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketSelling.Web.Controllers.AppUserController",
     "Method": "UpdateLoyaltyTier",
     "RelativePath": "api/AppUser/{id}/tier",
     "HttpMethod": "PUT",

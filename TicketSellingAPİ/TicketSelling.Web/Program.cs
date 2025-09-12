@@ -10,6 +10,7 @@ using TicketSelling.Application.Services;
 using TicketSelling.Core.Entities;
 using TicketSelling.Core.Interfaces;
 using TicketSelling.Infrastructure;
+using TicketSelling.Infrastructure.Email;
 using TicketSelling.Infrastructure.Repositories;
 
 namespace TicketSelling.Web;
@@ -20,7 +21,16 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+            {
+                policy
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+        });
 
         builder.Services.AddControllers()
             .AddJsonOptions(options =>
@@ -40,6 +50,7 @@ public class Program
         builder.Services.AddScoped<IMatchService, MatchManager>();
         builder.Services.AddScoped<ITicketService, TicketManager>();
         builder.Services.AddScoped<IMatchSectorPriceRepository, MatchSectorPriceRepository>();
+        builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
         builder.Services.AddSwaggerGen(c =>
         {
@@ -119,8 +130,10 @@ public class Program
 
 
         builder.Services.AddAutoMapper(typeof(Program));
-        var app = builder.Build();
 
+        
+        var app = builder.Build();
+        app.UseCors("AllowAll");
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
